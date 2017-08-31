@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+{% if player.id_in_group == 1 %}
+    <p>
+        You sent Participant B {{ group.sent_amount }}.
+        Participant B has {{ group.sent_back_amount }}ed the offer.
+    </p>
+{% else %}
+    <p>
+        Participant A sent you {{ group.sent_amount }}.
+        You {{group.sent_back_amount}}ed the offer.
+    </p>
+
+{% endif %}
+
+    <p>
+    Therefore, your total payoff is {{ player.payoff }}.
+    </p>
+
+    {% include 'my_trust/Instructions.html' %}
+
+{% endblock %}
