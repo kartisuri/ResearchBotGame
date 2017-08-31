@@ -2,16 +2,13 @@ from otree.api import (
     models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer,
     Currency as c,
 )
-import random
+import random, pickle
 
 author = 'Karthik'
 
 doc = """
 Simple Trust and Ultimatum Game
 """
-
-amount_list = [[5, 3], [5, 2], [5, 1], [4, 2], [4, 1], [3, 1], [3, 2], [2, 1], [2, 2], [1, 1], ]
-random.shuffle(amount_list)
 
 
 class Constants(BaseConstants):
@@ -28,18 +25,16 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
 
-    amount_choice = 0
-
     def creating_session(self):
-
-        global amount_list
-        amount_choice = amount_list[self.round_number-1]
+        self.session.vars['amount_list'] = [[5, 3], [5, 2], [5, 1], [4, 2], [4, 1],
+                                            [3, 1], [3, 2], [2, 1], [2, 2], [1, 1], ]
+        if self.round_number == 1:
+            random.shuffle(self.session.vars['amount_list'])
 
 
 class Group(BaseGroup):
-    global amount_list
-    sent_amount = models.CurrencyField(choices=amount_list[i],
-                                       widget=widgets.RadioSelect(),
+
+    sent_amount = models.CurrencyField(widget=widgets.RadioSelect(),
                                        doc="""Amount sent by P1""",)
     sent_back_amount = models.CharField(widget=widgets.RadioSelect(),
                                         doc="""Offer Amount Accepted/Rejected by P2""",)

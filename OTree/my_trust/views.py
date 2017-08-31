@@ -9,6 +9,9 @@ class Send(Page):
     form_model = models.Group
     form_fields = ['sent_amount']
 
+    def sent_amount_choices(self):
+        return self.session.vars['amount_list'][self.round_number-1]
+
     def is_displayed(self):
         return self.player.id_in_group == 1
 
