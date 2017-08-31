@@ -17,6 +17,10 @@ class WaitForP1(WaitPage):
     pass
 
 
+class WaitForP2(WaitPage):
+    pass
+
+
 class SendBack(Page):
 
     form_model = models.Group
@@ -36,17 +40,22 @@ class SendBack(Page):
 
 class ResultsWaitPage(WaitPage):
 
+    def is_displayed(self):
+        return self.round_number == Constants.num_rounds
+
     def after_all_players_arrive(self):
         self.group.set_payoffs()
 
 
 class Results(Page):
-    pass
+    def is_displayed(self):
+        return self.round_number == Constants.num_rounds
 
 page_sequence = [
     Send,
     WaitForP1,
     SendBack,
+    WaitForP2,
     ResultsWaitPage,
     Results,
 ]
