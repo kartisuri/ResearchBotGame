@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Participant A sent you {{ sent_amount }} points from {{ Constants.endowment }}.
+        You {{group.sent_back_amount}}ed the offer.
+    </p>
+
+    {% include 'my_trust_with_chat/Instructions.html' %}
+
+    {% next_button %}
+
+{% endblock %}
