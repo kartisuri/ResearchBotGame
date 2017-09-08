@@ -7,23 +7,25 @@
 
 {% block content %}
 
+    <p>
+    The paying round for this game was {{ paying_round }}.
+    </p>
+
 {% if player.id_in_group == 1 %}
     <p>
-        You sent Participant B {{ group.sent_amount }}.
-        Participant B has {{ group.sent_back_amount }}ed the offer.
+        In round {{ paying_round }}, you were given two options {{ choice1 }} and {{ choice2 }} to split among
+        yourselves and you chose {{sent_amount}}.
+        Participant B has {{ sent_back_amount }}ed the offer you made.
+        Therefore, your total payoff is {{ payoffA }}.
     </p>
 {% else %}
     <p>
-        Participant A sent you {{ group.sent_amount }}.
-        You {{group.sent_back_amount}}ed the offer.
+        In round {{ paying_round }}, Participant A was given two options {{ choice1 }} and {{ choice2 }} to split among
+        yourselves and Participant A chose {{ sent_amount }}.
+        You {{ sent_back_amount }}ed the offer.
+        Therefore, your total payoff is {{ payoffB }}.
     </p>
 
 {% endif %}
-
-    <p>
-    Therefore, your total payoff is {{ player.payoff }}.
-    </p>
-
-    {% include 'my_trust/Instructions.html' %}
 
 {% endblock %}

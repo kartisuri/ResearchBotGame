@@ -7,11 +7,11 @@
 
 {% block content %}
 
-    {% include 'my_trust/Instructions.html' %}
+{#    {% include 'my_trust/Instructions.html' %}#}
 
     <p>
-        You are Participant B. Participant A sent you {{group.sent_amount}}
-        and you received {{tripled_amount}}.
+        You are Participant B. Participant A was given two options {{ choice1 }} and {{ choice2 }} to split among
+        yourself and Participant A chose {{group.sent_amount}} and you received {{recvd_amount}} points.
     </p>
 
     {% formfield group.sent_back_amount with label="Do you accept this offer?" %}
