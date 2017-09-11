@@ -7,13 +7,11 @@
 
 {% block content %}
 
-{#    {% include 'my_trust/Instructions.html' %}#}
-
     <p>
-    You are Participant A. Now you have {{Constants.endowment}}.
+        You are playing the role of a <b>Proposer</b>.
     </p>
 
-    {% formfield group.sent_amount with label="How do you would to split between the given choices?" %}
+    {% formfield group.sent_amount with label="You need to make a proposal to the Responder." %}
 
     {% next_button %}
 

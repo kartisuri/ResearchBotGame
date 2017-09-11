@@ -17,7 +17,7 @@ class Constants(BaseConstants):
     players_per_group = 2
     num_rounds = 10
 
-    endowment = '$10'
+    endowment = '10'
     multiplication_factor = 1
 
     instructions_template = 'my_trust/Instructions.html'
@@ -51,20 +51,11 @@ class Group(BaseGroup):
             p1.payoff = 0
             p2.payoff = 0
         if self.round_number == self.session.vars['paying_round']:
-            print("Before<<<<<<%s\n<<<<<<<%s\n<<<<<<<<<%s\n<<<<<<<<<<<<%s\n"%(self.sent_amount, self.sent_back_amount,
-                                                                        p1.payoff, p2.payoff))
             self.session.vars['PR_proposer_selection'] = self.sent_amount
             self.session.vars['PR_responder_selection'] = self.sent_back_amount
             self.session.vars['PR_proposer_payoff'] = p1.payoff
             self.session.vars['PR_responder_payoff'] = p2.payoff
-            print("Session<<<<<<%s\n<<<<<<<%s\n<<<<<<<<<%s\n<<<<<<<<<<<<%s\n" % (self.session.vars[
-                                                                                     'PR_proposer_selection'],
-                                                                                 self.session.vars[
-                                                                                     'PR_responder_selection'],
-                                                                                 self.session.vars[
-                                                                                     'PR_proposer_payoff'],
-                                                                                 self.session.vars[
-                                                                                     'PR_responder_payoff']))
+
 
 class Player(BasePlayer):
 

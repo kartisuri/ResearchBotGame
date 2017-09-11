@@ -8,22 +8,28 @@
 {% block content %}
 
     <p>
-    The paying round for this game was {{ paying_round }}.
+        The paying round for this game was <b>Round {{ paying_round }}</b>.
     </p>
 
 {% if player.id_in_group == 1 %}
     <p>
-        In round {{ paying_round }}, you were given two options {{ choice1 }} and {{ choice2 }} to split among
-        yourselves and you chose {{sent_amount}}.
-        Participant B has {{ sent_back_amount }}ed the offer you made.
-        Therefore, your total payoff is {{ payoffA }}.
+        In round {{ paying_round }}, You were playing the role as a <b>{{ player.role }}</b>.
+        You were given two options:<br/>
+        &nbsp;{{ proposer_option1 }} <br/>
+        &nbsp;{{ proposer_option2 }} <br/>
+        You chose <b>{{ proposer_selection }}</b>.<br/>
+        The <b>Responder</b> has <b>{{ responder_selection }}ed</b> the offer.
+        Therefore, your total payoff is {{ proposer_payoff }}.
     </p>
 {% else %}
     <p>
-        In round {{ paying_round }}, Participant A was given two options {{ choice1 }} and {{ choice2 }} to split among
-        yourselves and Participant A chose {{ sent_amount }}.
-        You {{ sent_back_amount }}ed the offer.
-        Therefore, your total payoff is {{ payoffB }}.
+        In round {{ paying_round }}, You were playing the role as a <b>{{ player.role }}</b>.
+        <b>Proposer</b> was given with two options:<br/>
+        &nbsp;{{ proposer_option1 }} <br/>
+        &nbsp;{{ proposer_option2 }} <br/>
+        Proposer chose <b>{{ proposer_selection }}</b>.<br/>
+        You have <b>{{ responder_selection }}ed</b> the offer.
+        Therefore, your total payoff is {{ responder_payoff }}.
     </p>
 
 {% endif %}
