@@ -1,17 +1,19 @@
-{% load otree_tags staticfiles %}
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
 
-<div class="instructions well well-lg">
+{% block title %}
+    Instructions
+{% endblock %}
 
-    <h3 class="panel-sub-heading">
-        Instructions
-    </h3>
-<p>
-    This is a trust game with 2 players.
-</p>
-<p>
-    To start, participant A receives {{ Constants.endowment }};
-    participant B receives nothing.
-    Participant A can send some points from {{ Constants.endowment }} to participant B.
-    Once B receives the points he can decide to accept or reject the offer from A.
-</p>
-</div>
+{% block content %}
+
+    <p>
+    To start, Participant A plays the role as a <b>Proposer</b>.<br/>
+    The Proposer receives two proposals which he/she can select to propose.<br/>
+    Participant B plays the role as a <b>Responder</b>.
+    The Responder then can decide to accept or reject the proposal made by the Proposer.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

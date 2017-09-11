@@ -8,10 +8,13 @@
 {% block content %}
 
     <p>
-        You are playing the role of a <b>Proposer</b>.
+        You are playing the role of a <b>Proposer</b>.<br/>
+        You need to make a proposal to the Responder from the proposals given below:<br/>
+        <b>{{ proposer_option1 }}<br/>
+        {{ proposer_option2 }}</b>
     </p>
 
-    {% formfield group.sent_amount with label="You need to make a proposal to the Responder." %}
+    {% formfield group.sent_amount with label="Which proposal do you select (Proposal 1 or Proposal 2)?" %}
 
     {% next_button %}
 
