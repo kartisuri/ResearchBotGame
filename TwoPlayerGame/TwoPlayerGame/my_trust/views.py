@@ -26,6 +26,7 @@ class Send(Page):
         return {
             'proposer_option1': self.session.vars['options'][0],
             'proposer_option2': self.session.vars['options'][1],
+            'round_number': self.round_number,
         }
 
     def is_displayed(self):
@@ -69,6 +70,7 @@ class SendBack(Page):
             'proposer_option1': proposer_option1,
             'proposer_option2': proposer_option2,
             'proposer_selection': proposer_selection,
+            'round_number': self.round_number,
         }
 
 
@@ -79,8 +81,6 @@ class ResultsWaitPage(WaitPage):
 
 
 class Instructions(Page):
-
-    timeout_seconds = 15
 
     def is_displayed(self):
         return self.round_number == 1
