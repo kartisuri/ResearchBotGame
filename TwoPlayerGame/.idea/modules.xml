@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../AIvsPlayer/.idea/AIvsPlayer.iml" filepath="$PROJECT_DIR$/../AIvsPlayer/.idea/AIvsPlayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/TwoPlayerGame.iml" filepath="$PROJECT_DIR$/.idea/TwoPlayerGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/../OTree/.idea/oTree.iml" filepath="$PROJECT_DIR$/../OTree/.idea/oTree.iml" />
     </modules>

@@ -5,6 +5,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="oTree" />
+    <orderEntry type="module" module-name="AIvsPlayer" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">

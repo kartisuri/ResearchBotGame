@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Round {{ round_number }}
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        You are playing the role as the <b>Responder</b>.
+        The Proposer would choose one proposal from the two proposals:<br/>
+        <b>{{ proposer_option1 }}<br/>
+        {{ proposer_option2}}</b><br/>
+        The Proposer chose <b>{{ proposer_selection }}</b>.
+    </p>
+
+    {% formfield group.sent_back_amount with label="Your decision is" %}
+
+    {% next_button %}
+
+{% endblock %}
