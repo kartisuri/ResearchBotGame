@@ -30,7 +30,7 @@ class Subsession(BaseSubsession):
         if self.round_number == 1:
             paying_round = random.randint(1, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
-        # self.group_randomly()
+        # self.group_randomly(fixed_id_in_group=True)
 
 
 class Group(BaseGroup):
