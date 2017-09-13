@@ -1,7 +1,7 @@
 var http = require("http");
 var mitsuku = require('mitsuku-api')();
 
-var port = 8080;
+var port = 5000;
 
 var server = http.createServer().listen(port, '0.0.0.0');
 console.log("Server is listening at " + port);

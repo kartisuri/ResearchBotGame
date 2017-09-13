@@ -79,7 +79,16 @@ class Results(Page):
         }
 
 
+class Chat(Page):
+
+    timeout_seconds = 60
+
+    def is_displayed(self):
+        return self.round_number == 1
+
+
 page_sequence = [
+    Chat,
     Instructions,
     SendBack,
     WaitForP2,

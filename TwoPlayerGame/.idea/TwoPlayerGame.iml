@@ -6,6 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="oTree" />
     <orderEntry type="module" module-name="AIvsPlayer" />
+    <orderEntry type="module" module-name="AIvsPlayerChat" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">
