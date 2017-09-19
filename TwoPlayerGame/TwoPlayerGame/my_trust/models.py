@@ -3,6 +3,7 @@ from otree.api import (
 )
 import random
 import re
+import requests
 
 author = 'Karthik'
 
@@ -35,9 +36,9 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
 
-    sent_amount = models.PositiveIntegerField(widget=widgets.RadioSelect(),
-                                              doc="""Amount sent by P1""",
-                                              choices=[1,2])
+    sent_amount = models.CharField(widget=widgets.RadioSelect(),
+                                   doc="""Amount sent by P1""",
+                                   choices=['Proposal1', 'Proposal2'])
     sent_back_amount = models.CharField(widget=widgets.RadioSelect(),
                                         doc="""Offer Amount Accepted/Rejected by P2""",
                                         choices=['Accept', 'Reject'])
@@ -45,18 +46,17 @@ class Group(BaseGroup):
     def set_payoffs(self):
         p1 = self.get_player_by_id(1)
         p2 = self.get_player_by_id(2)
-        if self.sent_back_amount == 'Accept':
-            amount_split = re.search('(.*)\:.*\$(\d).*\$(\d)', self.session.vars['proposer_selection'])
+        if (self.sent_back_amount == 'Accept') and (self.round_number == self.session.vars['paying_round']) :
+            amount_split = re.search('(.*):.*\$(\d).*\$(\d)', self.session.vars['proposer_selection'])
             p1.payoff = amount_split.group(2)
             p2.payoff = amount_split.group(3)
-        else:
-            p1.payoff = 0
-            p2.payoff = 0
-        if self.round_number == self.session.vars['paying_round']:
             self.session.vars['PR_proposer_selection'] = self.session.vars['proposer_selection']
             self.session.vars['PR_responder_selection'] = self.sent_back_amount
             self.session.vars['PR_proposer_payoff'] = p1.payoff
             self.session.vars['PR_responder_payoff'] = p2.payoff
+        else:
+            p1.payoff = 0
+            p2.payoff = 0
 
 
 class Player(BasePlayer):
