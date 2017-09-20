@@ -50,13 +50,13 @@ class Group(BaseGroup):
             amount_split = re.search('(.*):.*\$(\d).*\$(\d)', self.session.vars['proposer_selection'])
             p1.payoff = amount_split.group(2)
             p2.payoff = amount_split.group(3)
-            self.session.vars['PR_proposer_selection'] = self.session.vars['proposer_selection']
-            self.session.vars['PR_responder_selection'] = self.sent_back_amount
-            self.session.vars['PR_proposer_payoff'] = p1.payoff
-            self.session.vars['PR_responder_payoff'] = p2.payoff
         else:
             p1.payoff = 0
             p2.payoff = 0
+        self.session.vars['PR_proposer_selection'] = self.session.vars['proposer_selection']
+        self.session.vars['PR_responder_selection'] = self.sent_back_amount
+        self.session.vars['PR_proposer_payoff'] = p1.payoff
+        self.session.vars['PR_responder_payoff'] = p2.payoff
 
 
 class Player(BasePlayer):
