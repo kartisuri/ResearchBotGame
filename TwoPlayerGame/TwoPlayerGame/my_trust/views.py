@@ -35,8 +35,10 @@ class Send(Page):
                                            '; the Responder receives $' + option[1][1], ]
         if self.round_number == self.session.vars['paying_round']:
             self.session.vars['PR_proposer_options'] = self.session.vars['option_str']
-        requests.post('http://172.23.206.99:6000/', json={'round_proposals': {str(self.round_number):
-                                                                              self.session.vars['option_str']}})
+        # requests.post('http://172.23.206.99:6000/', json={'round_proposals': {str(self.round_number):
+        #                                                                       self.session.vars['option_str']}})
+        requests.post('http://192.168.99.1:6000/', json={'round_proposals': {str(self.round_number):
+                                                                             self.session.vars['option_str']}})
         return {
             'proposer_option1': self.session.vars['option_str'][0],
             'proposer_option2': self.session.vars['option_str'][1],
