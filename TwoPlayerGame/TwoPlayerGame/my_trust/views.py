@@ -1,6 +1,7 @@
 from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
+from otree.api import Currency as c
 import random
 import requests
 import re
@@ -43,7 +44,7 @@ class Send(Page):
         # requests.post('http://172.23.206.99:6000/', json={'round_proposals': {str(self.round_number):
         #                                                                       self.session.vars['option_str']}})
         requests.post('http://192.168.99.1:6000/', json={'round_proposals': {str(self.round_number):
-                                                                             self.session.vars['option_str']}})
+                                                                                 [option[0][1], option[1][1]]}})
         return {
             'proposer_option1': self.session.vars['option_str'][0],
             'proposer_option2': self.session.vars['option_str'][1],
@@ -117,31 +118,31 @@ class Results(Page):
         return self.round_number == Constants.num_rounds
 
     def vars_for_template(self):
-        self.session.vars['proposer_pay'] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        self.session.vars['responder_pay'] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        self.session.vars['proposer_pay'][self.session.vars['paying_round']-1] =\
-            self.session.vars['PR_proposer_payoff']
-        self.session.vars['responder_pay'][self.session.vars['paying_round']-1] =\
-            self.session.vars['PR_responder_payoff']
         for i in self.session.vars['choices_list']:
             if i == 1:
-                self.session.vars['proposer_result'] = [[1, self.session.vars['proposed'][0],
+                self.session.vars['proposer_result'] = [[1, c(self.session.vars['proposed'][0]),
                                                          self.session.vars['responded'][0],
-                                                         self.session.vars['proposer_pay'][0]],]
-                self.session.vars['responder_result'] = [[1, self.session.vars['proposed'][0],
+                                                         self.session.vars['proposer_payoff'][0]],]
+                self.session.vars['responder_result'] = [[1, c(self.session.vars['proposed'][0]),
                                                          self.session.vars['responded'][0],
-                                                         self.session.vars['responder_pay'][0]],]
+                                                         self.session.vars['responder_payoff'][0]],]
             else:
-                self.session.vars['proposer_result'].append([i, self.session.vars['proposed'][i-1],
+                self.session.vars['proposer_result'].append([i, c(self.session.vars['proposed'][i-1]),
                                                              self.session.vars['responded'][i-1],
-                                                             self.session.vars['proposer_pay'][i-1]])
-                self.session.vars['responder_result'].append([i, self.session.vars['proposed'][i-1],
+                                                             self.session.vars['proposer_payoff'][i-1]])
+                self.session.vars['responder_result'].append([i, c(self.session.vars['proposed'][i-1]),
                                                               self.session.vars['responded'][i-1],
-                                                              self.session.vars['responder_pay'][i-1]])
+                                                              self.session.vars['responder_payoff'][i-1]])
+        self.session.vars['PR_proposer_payoff'] =\
+            self.session.vars['proposer_payoff'][self.session.vars['paying_round']-1]
+        self.session.vars['PR_responder_payoff'] =\
+            self.session.vars['responder_payoff'][self.session.vars['paying_round'] - 1]
         return {
             'paying_round': self.session.vars['paying_round'],
             'proposer_result': self.session.vars['proposer_result'],
             'responder_result': self.session.vars['responder_result'],
+            'proposer_payoff': self.session.vars['PR_proposer_payoff'],
+            'responder_payoff': self.session.vars['PR_responder_payoff'],
         }
 
 

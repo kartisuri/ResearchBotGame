@@ -8,17 +8,20 @@
 {% block content %}
 
     <p>
-        The paying round for this game is <b>Round {{ paying_round }}</b>.
+        The paying round for this game is <b>Round {{ paying_round }}</b>.<br/>
     </p>
 
 {% if player.id_in_group == 1 %}
+    <p>
+        Therefore your payoff is <b>{{ proposer_payoff }}</b>.
+    </p>
     <table>
         <th>Decision and Payoff History</th>
         <tr>
-            <td>Round|title</td>
-            <td>Proposed Offer to Responder|title</td>
-            <td>Responder's Decision|title</td>
-            <td>Your Payoff|title</td>
+            <td>Round</td>
+            <td>Proposed Offer to Responder</td>
+            <td>Responder's Decision</td>
+            <td>Your Payoff</td>
         </tr>
     {% for i, p, r, pay in proposer_result %}
         <tr>
@@ -30,13 +33,16 @@
     {% endfor %}
     </table>
 {% else %}
+    <p>
+        Therefore your payoff is <b>{{ responder_payoff }}</b>.
+    </p>
     <table>
         <th>Decision and Payoff History</th>
         <tr>
-            <td>Round|title</td>
-            <td>Proposed Offer by Proposer|title</td>
+            <td>Round</td>
+            <td>Proposed Offer by Proposer</td>
             <td>Your Decision|title</td>
-            <td>Your Payoff|title</td>
+            <td>Your Payoff</td>
         </tr>
         {% for i, p, r, pay in responder_result %}
         <tr>
