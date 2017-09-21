@@ -12,26 +12,41 @@
     </p>
 
 {% if player.id_in_group == 1 %}
-    <p>
-        In round {{ paying_round }}, You were playing the role as a <b>{{ player.role }}</b>.
-        You were given two options:<br/>
-        &nbsp;{{ proposer_option1 }} <br/>
-        &nbsp;{{ proposer_option2 }} <br/>
-        You chose <b>{{ proposer_selection }}</b>.<br/>
-        The <b>Responder</b> has <b>{{ responder_selection }}ed</b> the offer.
-        Therefore, your total payoff is {{ proposer_payoff }}.
-    </p>
+    <table>
+        <th>Decision and Payoff History</th>
+        <tr>
+            <td>Round|title</td>
+            <td>Proposed Offer to Responder|title</td>
+            <td>Responder's Decision|title</td>
+            <td>Your Payoff|title</td>
+        </tr>
+    {% for i, p, r, pay in proposer_result %}
+        <tr>
+            <td>{{ i }}</td>
+            <td>{{ p }}</td>
+            <td>{{ r }}</td>
+            <td>{{ pay }}</td>
+        </tr>
+    {% endfor %}
+    </table>
 {% else %}
-    <p>
-        In round {{ paying_round }}, You were playing the role as a <b>{{ player.role }}</b>.
-        <b>Proposer</b> was given with two options:<br/>
-        &nbsp;{{ proposer_option1 }} <br/>
-        &nbsp;{{ proposer_option2 }} <br/>
-        Proposer chose <b>{{ proposer_selection }}</b>.<br/>
-        You have <b>{{ responder_selection }}ed</b> the offer.
-        Therefore, your total payoff is {{ responder_payoff }}.
-    </p>
-
+    <table>
+        <th>Decision and Payoff History</th>
+        <tr>
+            <td>Round|title</td>
+            <td>Proposed Offer by Proposer|title</td>
+            <td>Your Decision|title</td>
+            <td>Your Payoff|title</td>
+        </tr>
+        {% for i, p, r, pay in responder_result %}
+        <tr>
+            <td>{{ i }}</td>
+            <td>{{ p }}</td>
+            <td>{{ r }}</td>
+            <td>{{ pay }}</td>
+        </tr>
+    {% endfor %}
+    </table>
 {% endif %}
 
 {% endblock %}

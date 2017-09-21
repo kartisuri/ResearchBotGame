@@ -46,6 +46,10 @@ class Group(BaseGroup):
     def set_payoffs(self):
         p1 = self.get_player_by_id(1)
         p2 = self.get_player_by_id(2)
+        if self.round_number == 1:
+            self.session.vars['responded'] = [self.sent_back_amount]
+        else:
+            self.session.vars['responded'].append(self.sent_back_amount)
         if (self.sent_back_amount == 'Accept') and (self.round_number == self.session.vars['paying_round']) :
             amount_split = re.search('(.*):.*\$(\d).*\$(\d)', self.session.vars['proposer_selection'])
             p1.payoff = amount_split.group(2)
@@ -53,7 +57,6 @@ class Group(BaseGroup):
         else:
             p1.payoff = 0
             p2.payoff = 0
-        self.session.vars['PR_proposer_selection'] = self.session.vars['proposer_selection']
         self.session.vars['PR_responder_selection'] = self.sent_back_amount
         self.session.vars['PR_proposer_payoff'] = p1.payoff
         self.session.vars['PR_responder_payoff'] = p2.payoff

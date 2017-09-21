@@ -26,6 +26,11 @@ class Send(Page):
         if self.round_number == 1:
             self.session.vars['shuffled_choices_list'] = sorted(self.session.vars['choices_list'],
                                                                 key=lambda x: random.random())
+            self.session.vars['result_proposals'] = []
+            for i in self.session.vars['shuffled_choices_list']:
+                responder_proposals = [self.session.vars['proposals'][i][i*10+1][1],
+                                       self.session.vars['proposals'][i][i*10+2][1], ]
+                self.session.vars['result_proposals'].append(responder_proposals)
         choice = self.session.vars['shuffled_choices_list'][self.round_number - 1]
         option = [self.session.vars['proposals'][choice][choice * 10 + 1],
                   self.session.vars['proposals'][choice][choice * 10 + 2], ]
@@ -70,9 +75,15 @@ class SendBack(Page):
             self.session.vars['proposer_selection'] = self.session.vars['option_str'][0]
         else:
             self.session.vars['proposer_selection'] = self.session.vars['option_str'][1]
+        if self.round_number == self.session.vars['paying_round']:
+            self.session.vars['PR_proposer_selection'] = self.session.vars['proposer_selection']
         selection = re.search("(.*):.*\$(\d).*\$(\d)", self.session.vars['proposer_selection'])
         proposer_selection = selection.group(1) + ': He/She receives $' + selection.group(2) +\
                              '; You receive $' + selection.group(3)
+        if self.round_number == 1:
+            self.session.vars['proposed'] = [selection.group(3)]
+        else:
+            self.session.vars['proposed'].append(selection.group(3))
         selection = re.search("(.*):.*\$(\d).*\$(\d)", self.session.vars['option_str'][0])
         proposer_option1 = selection.group(1) + ': He/She receives $' + selection.group(2) + '; You receive $' +\
                            selection.group(3)
@@ -106,14 +117,31 @@ class Results(Page):
         return self.round_number == Constants.num_rounds
 
     def vars_for_template(self):
+        self.session.vars['proposer_pay'] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.session.vars['responder_pay'] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.session.vars['proposer_pay'][self.session.vars['paying_round']-1] =\
+            self.session.vars['PR_proposer_payoff']
+        self.session.vars['responder_pay'][self.session.vars['paying_round']-1] =\
+            self.session.vars['PR_responder_payoff']
+        for i in self.session.vars['choices_list']:
+            if i == 1:
+                self.session.vars['proposer_result'] = [[1, self.session.vars['proposed'][0],
+                                                         self.session.vars['responded'][0],
+                                                         self.session.vars['proposer_pay'][0]],]
+                self.session.vars['responder_result'] = [[1, self.session.vars['proposed'][0],
+                                                         self.session.vars['responded'][0],
+                                                         self.session.vars['responder_pay'][0]],]
+            else:
+                self.session.vars['proposer_result'].append([i, self.session.vars['proposed'][i-1],
+                                                             self.session.vars['responded'][i-1],
+                                                             self.session.vars['proposer_pay'][i-1]])
+                self.session.vars['responder_result'].append([i, self.session.vars['proposed'][i-1],
+                                                              self.session.vars['responded'][i-1],
+                                                              self.session.vars['responder_pay'][i-1]])
         return {
             'paying_round': self.session.vars['paying_round'],
-            'proposer_option1': self.session.vars['PR_proposer_options'][0],
-            'proposer_option2': self.session.vars['PR_proposer_options'][1],
-            'proposer_payoff': self.session.vars['PR_proposer_payoff'],
-            'responder_payoff': self.session.vars['PR_responder_payoff'],
-            'proposer_selection': self.session.vars['PR_proposer_selection'],
-            'responder_selection': self.session.vars['PR_responder_selection'],
+            'proposer_result': self.session.vars['proposer_result'],
+            'responder_result': self.session.vars['responder_result'],
         }
 
 
