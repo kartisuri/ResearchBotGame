@@ -16,11 +16,22 @@ server.on('request', function(request, response) {
         request.on('end', function () {
             console.log("User: " + body);
 			response.writeHead(200, {'Content-Type': 'text/plain'});
-			mitsuku.send(body).then(function(result)
-			{
-				console.log("Bot: " + result);
-				response.end(result);
-			});
+			if (body.search(/\bgame\b|\bexperiment\b|\bresearch\b/i) !== -1){
+				response.end("Sorry! I don't know");
+				console.log("Bot: Sorry! I don't know");
+			} else if (body.search(/\bhi\b/i) !== -1) {
+				response.end("Hi there");
+				console.log("Bot: Hi there");
+			} else {
+				mitsuku.send(body).then(function(result) {
+					if (result.search(/mitsuku/i) !== -1){
+						result = "Sorry! I don't know"
+					}
+					console.log("Bot: " + result);
+					response.end(result);
+				});
+			}
+			
         });
 	}
     else
