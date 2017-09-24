@@ -81,7 +81,7 @@ class Results(Page):
 
 class Chat(Page):
 
-    timeout_seconds = 60
+    timeout_seconds = 300
 
     def is_displayed(self):
         return self.round_number == 1

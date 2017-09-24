@@ -15,23 +15,31 @@ server.on('request', function(request, response) {
         });
         request.on('end', function () {
             console.log("User: " + body);
-			response.writeHead(200, {'Content-Type': 'text/plain'});
+			var headers = {};
+			headers["Access-Control-Allow-Origin"] = "*";
+			headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";
+			headers["Access-Control-Allow-Credentials"] = false;
+			headers["Access-Control-Max-Age"] = '86400'; // 24 hours
+			headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
+			response.writeHead(200, headers);
 			if (body.search(/\bgame\b|\bexperiment\b|\bresearch\b/i) !== -1){
-				response.end("Sorry! I don't know");
-				console.log("Bot: Sorry! I don't know");
+				console.log("I am not telling you!");
+				response.end("I am not telling you!");
 			} else if (body.search(/\bhi\b/i) !== -1) {
+				console.log("Hi there");
 				response.end("Hi there");
-				console.log("Bot: Hi there");
+			} else if (body.search(/\bwhat is up\b|\bwhats up\b/i) !== -1) {
+				console.log("Nothing");
+				response.end("Nothing");
 			} else {
 				mitsuku.send(body).then(function(result) {
-					if (result.search(/mitsuku/i) !== -1){
-						result = "Sorry! I don't know"
+					if (result.search(/mitsuku|creator/i) !== -1){
+						result = "I am not telling you!"
 					}
-					console.log("Bot: " + result);
+					console.log(result);
 					response.end(result);
 				});
 			}
-			
         });
 	}
     else

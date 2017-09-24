@@ -6,38 +6,31 @@
 {% block content %}
 
     <div class="container">
-
       <div class="jumbotron mt-1">
         <h4 class="jumbotron-heading text-xs-center">Chat Room for chatting</h4>
         <p class="lead text-xs-center">
           This page allows you to chat.
         </p>
-
         <hr class="my-2">
-
         <div class="row">
           <div class="col-xs-6 offset-xs-3">
             <ul class="list-group chat-log js-chat-log">
             </ul>
-
             <div class="input-group input-group-lg mt-1">
               <input id='textbox' type="text" class="form-control js-text" placeholder="Type something to begin..."/>
               <span class="input-group-btn">
                 <button id='say' class="btn btn-primary js-say" type="button">Say</button>
               </span>
             </div>
-
           </div>
         </div>
-
       </div>
-
     </div>
-
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/js.cookie.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <script>
+
         var csrftoken = Cookies.get('csrftoken');
 
         function csrfSafeMethod(method) {
@@ -72,7 +65,7 @@
             xhr.setRequestHeader('Content-Type', 'text/plain');
             xhr.send(inputData.text);
             xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4) {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
                     createRow(xhr.responseText);
                     $input.val('');
                     $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
@@ -80,50 +73,16 @@
             };
         }
 
-//        function submitInput() {
-//            var inputData = {
-//                'text': $input.val()
-//            };
-//            createRow(inputData.text);
-//            var $submit = function () {
-//                $.ajax({
-//                    type: 'POST',
-//                    url: 'http://127.0.0.1:5000',
-//                    data: inputData.text,
-//                    success: function (statement) {
-//                        alert(statement);
-//                        createRow(statement.text);
-//                        $input.val('');
-//                        $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-//                    },
-//                    contentType: 'text/plain',
-//                    dataType: 'text'
-//                });
-//            };
-
-//            $submit.done(function(statement) {
-//                alert(statement);
-//                createRow(statement.text);
-//                $input.val('');
-//                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-//            });
-//        }
-
         $sayButton.click(function() {
-//            submitInput();
             say();
         });
 
-//        $("textbox").keyup(function(event){
-//            if(event.keyCode == 13){
-//                $("say").click();
-//            }
-//        });
-//
-//        $input.keydown(function(event) {
-//            if (event.keyCode == 13) {
-//                submitInput();
-//            }
-//        });
+        $(document).keypress(function (e) {
+            if (e.which === 13) {
+                e.preventDefault();
+                say();
+            }
+        });
+
     </script>
 {% endblock %}
