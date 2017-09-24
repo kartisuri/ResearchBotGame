@@ -16,11 +16,7 @@ class Constants(BaseConstants):
     name_in_url = 'my_trust'
     players_per_group = 2
     num_rounds = 10
-
     endowment = '10'
-    multiplication_factor = 1
-
-    instructions_template = 'my_trust/Instructions.html'
 
 
 class Subsession(BaseSubsession):

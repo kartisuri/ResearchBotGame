@@ -13,43 +13,44 @@
 
 {% if player.id_in_group == 1 %}
     <p>
-        Therefore your payoff is <b>{{ proposer_payoff }}</b>.
+        Therefore your payoff is <b>{{ proposer_payoff }}</b>.<br/>
+        <b>Decision and Payoff History</b>
     </p>
-    <table>
-        <th>Decision and Payoff History</th>
+    <table style="width: 100%">
         <tr>
-            <td>Round</td>
-            <td>Proposed Offer to Responder</td>
-            <td>Responder's Decision</td>
-            <td>Your Payoff</td>
+            <th>Round</th>
+            <th>Proposed Offer to Responder</th>
+            <th>Responder's Decision</th>
+            <th>Your Payoff</th>
         </tr>
     {% for i, p, r, pay in proposer_result %}
         <tr>
-            <td>{{ i }}</td>
-            <td>{{ p }}</td>
-            <td>{{ r }}</td>
-            <td>{{ pay }}</td>
+            <td width="15%">{{ i }}</td>
+            <td width="35%">{{ p }}</td>
+            <td width="35%">{{ r }}</td>
+            <td width="15%">{{ pay }}</td>
         </tr>
     {% endfor %}
     </table>
 {% else %}
     <p>
-        Therefore your payoff is <b>{{ responder_payoff }}</b>.
+        Therefore your payoff is <b>{{ responder_payoff }}</b>.<br/>
+        <b>Decision and Payoff History</b>
     </p>
-    <table>
-        <th>Decision and Payoff History</th>
+    <table style="width: 100%">
+
         <tr>
-            <td>Round</td>
-            <td>Proposed Offer by Proposer</td>
-            <td>Your Decision|title</td>
-            <td>Your Payoff</td>
+            <th>Round</th>
+            <th>Proposed Offer by Proposer</th>
+            <th>Your Decision</th>
+            <th>Your Payoff</th>
         </tr>
         {% for i, p, r, pay in responder_result %}
         <tr>
-            <td>{{ i }}</td>
-            <td>{{ p }}</td>
-            <td>{{ r }}</td>
-            <td>{{ pay }}</td>
+            <td width="15%">{{ i }}</td>
+            <td width="35%">{{ p }}</td>
+            <td width="35%">{{ r }}</td>
+            <td width="15%">{{ pay }}</td>
         </tr>
     {% endfor %}
     </table>

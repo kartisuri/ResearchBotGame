@@ -1,0 +1,88 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags%}
+{% block title %}
+    Chat Page
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+      <div class="jumbotron mt-1">
+        <h4 class="jumbotron-heading text-xs-center">Chat Room for chatting</h4>
+        <p class="lead text-xs-center">
+          This page allows you to chat.
+        </p>
+        <hr class="my-2">
+        <div class="row">
+          <div class="col-xs-6 offset-xs-3">
+            <ul class="list-group chat-log js-chat-log">
+            </ul>
+            <div class="input-group input-group-lg mt-1">
+              <input id='textbox' type="text" class="form-control js-text" placeholder="Type something to begin..."/>
+              <span class="input-group-btn">
+                <button id='say' class="btn btn-primary js-say" type="button">Say</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/js.cookie.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script>
+
+        var csrftoken = Cookies.get('csrftoken');
+
+        function csrfSafeMethod(method) {
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+        $.ajaxSetup({
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+            }
+        });
+
+        var $chatlog = $('.js-chat-log');
+        var $input = $('.js-text');
+        var $sayButton = $('.js-say');
+
+        function createRow(text) {
+            var $row = $('<li class="list-group-item"></li>');
+            $row.text(text);
+            $chatlog.append($row);
+        }
+
+        function say() {
+            var inputData = {
+                'text': $input.val()
+            };
+            createRow(inputData.text);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://127.0.0.1:5000', true);
+            xhr.setRequestHeader('Content-Type', 'text/plain');
+            xhr.send(inputData.text);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    createRow(xhr.responseText);
+                    $input.val('');
+                    $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+                }
+            };
+        }
+
+        $sayButton.click(function() {
+            say();
+        });
+
+        $(document).keypress(function (e) {
+            if (e.which === 13) {
+                e.preventDefault();
+                say();
+            }
+        });
+
+    </script>
+{% endblock %}

@@ -33,7 +33,7 @@ server.on('request', function(request, response) {
 				response.end("Nothing");
 			} else {
 				mitsuku.send(body).then(function(result) {
-					if (result.search(/mitsuku|creator/i) !== -1){
+					if (result.search(/mitsuku|creator|mousebreaker/i) !== -1){
 						result = "I am not telling you!"
 					}
 					console.log(result);

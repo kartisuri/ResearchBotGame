@@ -145,8 +145,16 @@ class Results(Page):
             'responder_payoff': self.session.vars['PR_responder_payoff'],
         }
 
+class Chat(Page):
+
+    timeout_seconds = 300
+
+    def is_displayed(self):
+        return self.round_number == 1
+
 
 page_sequence = [
+    Chat,
     Instructions,
     Send,
     WaitForP1,
