@@ -22,7 +22,7 @@ server.on('request', function(request, response) {
 			headers["Access-Control-Max-Age"] = '86400'; // 24 hours
 			headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
 			response.writeHead(200, headers);
-			if (body.search(/\bgame\b|\bexperiment\b|\bresearch\b/i) !== -1){
+			if (body.search(/\bgame\b|\bexperiment\b|\bresearch\b|\bwhat is this\b|whats this/i) !== -1){
 				console.log("I am not telling you!");
 				response.end("I am not telling you!");
 			} else if (body.search(/\bhi\b/i) !== -1) {

@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="686db961-da29-4d70-bd37-aee980279f2b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html" afterPath="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../chatbot.js" afterPath="$PROJECT_DIR$/../chatbot.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../round_options.txt" afterPath="$PROJECT_DIR$/../round_options.txt" />
     </list>
@@ -34,7 +30,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="557">
@@ -42,6 +38,16 @@
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/static/js/jquery.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -59,7 +65,7 @@
       <file leaf-file-name="Results.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
+            <state relative-caret-position="450">
               <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
@@ -144,8 +150,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,6 +175,21 @@
               <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
               <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
               <item name="my_trust" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -178,28 +199,6 @@
               <item name="my_trust" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="my_trust" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
-              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
-              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
-              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
@@ -239,6 +238,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AIvsPlayerChat" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Karthik\Documents\ResearchBotGame\TwoPlayerGame\TwoPlayerGame\my_trust" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -363,13 +367,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/SendBack.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../OTree/matching_pennies/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -658,7 +655,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state relative-caret-position="450">
           <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
             <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
@@ -674,6 +671,14 @@
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/static/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
