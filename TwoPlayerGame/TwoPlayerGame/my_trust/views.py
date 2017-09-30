@@ -41,10 +41,11 @@ class Send(Page):
                                            '; the Responder receives $' + option[1][1], ]
         if self.round_number == self.session.vars['paying_round']:
             self.session.vars['PR_proposer_options'] = self.session.vars['option_str']
-        # requests.post('http://172.23.206.99:6000/', json={'round_proposals': {str(self.round_number):
-        #                                                                       self.session.vars['option_str']}})
-        requests.post('http://192.168.99.1:6000/', json={'round_proposals': {str(self.round_number):
-                                                                                 [option[0][1], option[1][1]]}})
+        requests.post('http://127.0.0.1:6000/', json={'round_proposals': {
+            self.round_number:[option[0][1], option[1][1]]}})
+        # requests.post('http://127.0.0.1:6000/', json={'round': str(self.round_number),
+        #                                               'proposals': [option[0][1], option[1][1]],
+        #                                               'session': self.session.vars['session_code']})
         return {
             'proposer_option1': self.session.vars['option_str'][0],
             'proposer_option2': self.session.vars['option_str'][1],
@@ -147,7 +148,11 @@ class Results(Page):
 
 class Chat(Page):
 
-    timeout_seconds = 300
+    timeout_seconds = 120
+
+    def vars_for_template(self):
+        return {'player': self.participant.id_in_session,
+                'session': self.session.vars['session_code']}
 
     def is_displayed(self):
         return self.round_number == 1

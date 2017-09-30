@@ -3,6 +3,7 @@ from otree.api import (
 )
 import random
 import re
+import string
 
 author = 'Karthik'
 
@@ -26,7 +27,9 @@ class Subsession(BaseSubsession):
         if self.round_number == 1:
             paying_round = random.randint(1, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
-        # self.group_randomly(fixed_id_in_group=True)
+            random_session_code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+            self.session.vars['session_code'] = random_session_code
+            # self.group_randomly(fixed_id_in_group=True)
 
 
 class Group(BaseGroup):
