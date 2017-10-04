@@ -6,13 +6,12 @@
 {% block content %}
 
     <div class="container">
-      <input class="jumbotron mt-1">
         <h4 class="jumbotron-heading text-xs-center">Chat Room for chatting</h4>
         <p class="lead text-xs-center">
           This page allows you to chat.
         </p>
-          <!--<input type="text" id="player" name="player" style="display:none" value={{ player }} title="playerID">-->
-        <!--<input type="text" id="session" name="session" style="display:none" value={{ session }} title="sessionID">-->
+        <input type="hidden" id="player" name="player" value={{ player }}>
+        <input type="hidden" id="session" name="session" value={{ session }}>
         <hr class="my-2">
         <div class="row">
           <div class="col-xs-6 offset-xs-3">
@@ -27,7 +26,6 @@
           </div>
         </div>
       </div>
-    </div>
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/js.cookie.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
@@ -58,33 +56,21 @@
         }
 
         function cleverBot(){
-            var input = $input.val();
             var key = "CC4qciuY4mXNry59ImrYA_clkgA";
-            createRow(input);
-//            $.ajax({
-//                method: "POST",
-//                url: "http://127.0.0.1:6000",
-//                data: {"text": input, "round": 0,
-//                    "id": "player" + document.getElementById("player").value,
-//                    "session": document.getElementById("session").value
-//                }
-//            });
+            var id = document.getElementById("player").value;
+            send("Player"+id, $input.val());
+            createRow($input.val());
             $.ajax({
                 url: "https://www.cleverbot.com/getreply",
-                data: {"input": input, "key": key},
+                data: {"input": $input.val(), "key": key},
                 dataType: "jsonp",
                 success: ProcessReply
             });
             function ProcessReply (data) {
-                if (data.error) console.log ('Error: ' + data.error);
-                else {
-//                    $.ajax({
-//                        url: "http://127.0.0.1:6000",
-//                        data: {"text": data.output, "round": 0,
-//                            "id": "bot" + document.getElementById("player").value,
-//                            "session": document.getElementById("session").value
-//                        }
-//                    });
+                if (data.error) {
+                    console.log ('Error: ' + data.error);
+                } else {
+                    send("Bot"+id, data.output);
                     createRow(data.output);
                     $input.val('');
                     $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
@@ -92,26 +78,38 @@
             }
         }
 
-        function say() {
-            var inputData = {
-                'text': $input.val(),
-                'id': document.getElementById("player").value,
-                'session': document.getElementById("session").value,
-                'round': 0
-            };
-            createRow(inputData.text);
+        function send(id, data){
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://192.168.99.1:5001/', true);
+            xhr.open('POST', 'http://127.0.0.1:5000/', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(inputData);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    createRow(xhr.responseText);
-                    $input.val('');
-                    $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-                }
-            };
+            xhr.send(JSON.stringify({
+                "round": "0",
+                "session": document.getElementById("session").value,
+                "id": id,
+                "text": data
+            }));
         }
+
+//        function say() {
+//            var inputData = {
+//                'text': $input.val(),
+//                'id': document.getElementById("player").value,
+//                'session': document.getElementById("session").value,
+//                'round': 0
+//            };
+//            createRow(inputData.text);
+//            var xhr = new XMLHttpRequest();
+//            xhr.open('POST', 'http://192.168.99.1:5000/', true);
+//            xhr.setRequestHeader('Content-Type', 'application/json');
+//            xhr.send(inputData);
+//            xhr.onreadystatechange = function () {
+//                if (xhr.readyState === XMLHttpRequest.DONE) {
+//                    createRow(xhr.responseText);
+//                    $input.val('');
+//                    $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+//                }
+//            };
+//        }
 
         $sayButton.click(function() {
 //            say();

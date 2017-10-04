@@ -41,11 +41,9 @@ class Send(Page):
                                            '; the Responder receives $' + option[1][1], ]
         if self.round_number == self.session.vars['paying_round']:
             self.session.vars['PR_proposer_options'] = self.session.vars['option_str']
-        requests.post('http://127.0.0.1:6000/', json={'round_proposals': {
-            self.round_number:[option[0][1], option[1][1]]}})
-        # requests.post('http://127.0.0.1:6000/', json={'round': str(self.round_number),
-        #                                               'proposals': [option[0][1], option[1][1]],
-        #                                               'session': self.session.vars['session_code']})
+        requests.post('http://127.0.0.1:5000/', json={'round': str(self.round_number),
+                                                      'proposals': [option[0][1], option[1][1]],
+                                                      'session': self.session.vars['session_code']})
         return {
             'proposer_option1': self.session.vars['option_str'][0],
             'proposer_option2': self.session.vars['option_str'][1],
@@ -57,11 +55,13 @@ class Send(Page):
 
 
 class WaitForP1(WaitPage):
-    pass
+
+    wait_for_all_groups = True
 
 
 class WaitForP2(WaitPage):
-    pass
+
+    wait_for_all_groups = True
 
 
 class SendBack(Page):
@@ -123,10 +123,10 @@ class Results(Page):
             if i == 1:
                 self.session.vars['proposer_result'] = [[1, c(self.session.vars['proposed'][0]),
                                                          self.session.vars['responded'][0],
-                                                         self.session.vars['proposer_payoff'][0]],]
+                                                         self.session.vars['proposer_payoff'][0]]]
                 self.session.vars['responder_result'] = [[1, c(self.session.vars['proposed'][0]),
                                                          self.session.vars['responded'][0],
-                                                         self.session.vars['responder_payoff'][0]],]
+                                                         self.session.vars['responder_payoff'][0]]]
             else:
                 self.session.vars['proposer_result'].append([i, c(self.session.vars['proposed'][i-1]),
                                                              self.session.vars['responded'][i-1],
@@ -145,6 +145,7 @@ class Results(Page):
             'proposer_payoff': self.session.vars['PR_proposer_payoff'],
             'responder_payoff': self.session.vars['PR_responder_payoff'],
         }
+
 
 class Chat(Page):
 
