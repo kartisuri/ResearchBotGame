@@ -16,7 +16,7 @@ else:
     DEBUG = True
 
 # don't share this with anybody.
-SECRET_KEY = '%m9-90mpqtn@)7t%r4-52i4mp9di@$ehy)^$)6rtfg%i_r-sa!'
+SECRET_KEY = 'h(kom99@yy!yns$ks$+bbk9^)z*g%u!0i6%w%kr$%fo!d2=ux&'
 
 
 DATABASES = {
@@ -58,7 +58,7 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'SGD'
+REAL_WORLD_CURRENCY_CODE = 'USD'
 USE_POINTS = True
 
 
@@ -68,7 +68,7 @@ USE_POINTS = True
 LANGUAGE_CODE = 'en'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
-INSTALLED_APPS = ['otree', 'otreechat']
+INSTALLED_APPS = ['otree']
 
 # SENTRY_DSN = ''
 
@@ -130,12 +130,6 @@ SESSION_CONFIG_DEFAULTS = {
 }
 
 SESSION_CONFIGS = [
-    {
-        'name': 'my_simple_survey',
-        'display_name': "My Simple Survey",
-        'num_demo_participants': 3,
-        'app_sequence': ['my_simple_survey'],
-    },
     {
         'name': 'public_goods',
         'display_name': "Public Goods",
@@ -302,12 +296,6 @@ SESSION_CONFIGS = [
         'display_name': "Trust Game (simple version from tutorial)",
         'num_demo_participants': 2,
         'app_sequence': ['trust_simple'],
-    },
-    {
-        'name': 'my_trust',
-        'display_name': "My Trust Game (simple version from tutorial)",
-        'num_demo_participants': 2,
-        'app_sequence': ['my_trust'],
     },
 
 ]

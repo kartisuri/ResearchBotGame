@@ -8,7 +8,7 @@ import string
 author = 'Karthik'
 
 doc = """
-Simple Trust Game for 2 players
+Simple Game for 2 players
 """
 
 

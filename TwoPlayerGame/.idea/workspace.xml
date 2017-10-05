@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="686db961-da29-4d70-bd37-aee980279f2b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../round_options.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LogServer.py" afterPath="$PROJECT_DIR$/../LogServer.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../OTree/common_value_auction/migrations/__init__.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/models.py" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Chat.html" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Chat.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Results.html" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/SendBack.html" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/SendBack.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/requirements.txt" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/requirements.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Chat.html" afterPath="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Chat.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,10 +27,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py">
+        <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="-568">
+              <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding>
                 <element signature="e#0#100#0" expanded="true" />
               </folding>
@@ -33,36 +38,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py">
+      <file leaf-file-name="Results.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Results.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3268">
-              <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+            <state relative-caret-position="0">
+              <caret line="0" column="32" lean-forward="true" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
               <folding>
-                <element signature="e#0#20#0" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chat.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Chat.html">
+      <file leaf-file-name="SendBack.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/SendBack.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-175">
-              <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="425">
+              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Results.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state relative-caret-position="-1400">
+              <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding>
-                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
+                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,7 +87,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../OTree/settings.py" />
         <option value="$PROJECT_DIR$/../OTree/my_trust/templates/my_trust/Instructions.html" />
         <option value="$PROJECT_DIR$/../OTree/my_trust/templates/my_trust/Send.html" />
         <option value="$PROJECT_DIR$/../OTree/my_trust/templates/my_trust/Results.html" />
@@ -98,18 +101,19 @@
         <option value="$PROJECT_DIR$/../AIvsPlayer/AIvsPlayer/templates/AIvsPlayer/Results.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayer/AIvsPlayer/views.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/settings.py" />
-        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Results.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Instaructions.html" />
-        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/SendBack.html" />
-        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py" />
-        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/models.py" />
-        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Instructions.html" />
-        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Chat.html" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/settings.py" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html" />
-        <option value="$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Chat.html" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" />
+        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Chat.html" />
+        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Results.html" />
+        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Instructions.html" />
+        <option value="$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py" />
+        <option value="$PROJECT_DIR$/../OTree/settings.py" />
+        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/models.py" />
+        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py" />
+        <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/SendBack.html" />
       </list>
     </option>
   </component>
@@ -143,87 +147,41 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
+              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
+              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
+              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
+              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
+              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
+              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="OTree" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OTree" type="462c0819:PsiDirectoryNode" />
-              <item name="my_simple_survey" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OTree" type="462c0819:PsiDirectoryNode" />
-              <item name="my_trust_with_chat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OTree" type="462c0819:PsiDirectoryNode" />
-              <item name="my_trust_with_chat" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OTree" type="462c0819:PsiDirectoryNode" />
-              <item name="my_trust_with_chat" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="my_trust_with_chat" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -326,15 +284,16 @@
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -343,7 +302,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -365,46 +323,7 @@
         <state relative-caret-position="350">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
-            <element signature="e#0#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1025">
-          <caret line="47" column="27" lean-forward="true" selection-start-line="47" selection-start-column="27" selection-end-line="47" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2050">
-          <caret line="82" column="22" lean-forward="true" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#100#0" expanded="true" />
+            <element signature="e#0#100#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -414,7 +333,7 @@
         <state relative-caret-position="3600">
           <caret line="150" column="25" lean-forward="false" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -424,8 +343,8 @@
         <state relative-caret-position="600">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -443,7 +362,7 @@
         <state relative-caret-position="350">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
-            <element signature="e#0#100#0" expanded="true" />
+            <element signature="e#0#100#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -461,8 +380,8 @@
         <state relative-caret-position="600">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -472,7 +391,7 @@
         <state relative-caret-position="3600">
           <caret line="150" column="25" lean-forward="false" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -482,7 +401,7 @@
         <state relative-caret-position="350">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
-            <element signature="e#0#100#0" expanded="true" />
+            <element signature="e#0#100#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -500,8 +419,8 @@
         <state relative-caret-position="600">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -511,7 +430,7 @@
         <state relative-caret-position="975">
           <caret line="45" column="8" lean-forward="false" selection-start-line="43" selection-start-column="10" selection-end-line="45" selection-end-column="8" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -521,7 +440,7 @@
         <state relative-caret-position="650">
           <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
           <folding>
-            <element signature="e#0#100#0" expanded="true" />
+            <element signature="e#0#100#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -531,7 +450,7 @@
         <state relative-caret-position="3900">
           <caret line="162" column="17" lean-forward="true" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -541,8 +460,8 @@
         <state relative-caret-position="600">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -560,7 +479,7 @@
         <state relative-caret-position="350">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="e#0#100#0" expanded="true" />
+            <element signature="e#0#100#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -570,7 +489,7 @@
         <state relative-caret-position="975">
           <caret line="45" column="48" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="48" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -580,8 +499,8 @@
         <state relative-caret-position="600">
           <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -599,7 +518,7 @@
         <state relative-caret-position="350">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="e#0#100#0" expanded="true" />
+            <element signature="e#0#100#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -609,7 +528,7 @@
         <state relative-caret-position="3575">
           <caret line="149" column="25" lean-forward="false" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -627,8 +546,8 @@
         <state relative-caret-position="450">
           <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -647,39 +566,237 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html">
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Instructions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#100#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Chat.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-175">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="225">
+          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#table#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/SendBack.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="127" column="14" lean-forward="false" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3268">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        <state relative-caret-position="1775">
+          <caret line="161" column="17" lean-forward="true" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#20#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-243">
+          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#100#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/bargaining/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#134#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/battle_of_the_sexes/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#134#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/bertrand/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#134#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/common_value_auction/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#134#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/common_value_auction/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#20#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/quiz/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#51#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/quiz/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#134#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/survey/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#134#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/survey/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#20#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/real_effort/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-514">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#134#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/real_effort/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#20#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3125">
+          <caret line="130" column="0" lean-forward="true" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-568">
+          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/MyPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/SendBack.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Results.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="32" lean-forward="true" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Instructions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="32" lean-forward="false" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1400">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

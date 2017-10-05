@@ -1,60 +1,56 @@
 from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
+from otree.api import Currency as c
 import random
 import re
-
-
-class WaitForP2(WaitPage):
-    pass
+import requests
+import numpy
 
 
 class SendBack(Page):
-
-    form_model = models.Group
+    form_model = models.Player
     form_fields = ['sent_back_amount']
 
-    def is_displayed(self):
-        return self.player.id_in_group == 1
+    def before_next_page(self):
+        self.player.set_payoffs()
 
     def vars_for_template(self):
-        self.session.vars['amount_list'] = [[5, 3], [5, 2], [5, 1], [4, 2], [4, 1],
-                                            [3, 1], [3, 2], [2, 1], [2, 2], [1, 1], ]
-        if self.round_number == 1:
-            self.session.vars['shuffled_amount_list'] = sorted(self.session.vars['amount_list'],
-                                                               key=lambda x: random.random())
-        self.session.vars['choice'] = self.session.vars['shuffled_amount_list'][self.round_number - 1]
-        self.session.vars['options'] = [str('Proposal 1: I receive $' + str((10 - self.session.vars['choice'][0])) +
-                                            '; the Responder receives $' + str((self.session.vars['choice'][0]))),
-                                        str('Proposal 2: I receive $' + str((10 - self.session.vars['choice'][1])) +
-                                            '; the Responder receives $' + str((self.session.vars['choice'][1]))), ]
+        choice = self.session.vars['shuffled_choices_list'][self.round_number - 1]
+        option = [self.session.vars['proposals'][choice][choice * 10 + 1],
+                  self.session.vars['proposals'][choice][choice * 10 + 2], ]
+        self.participant.vars['option_str'] = ['Proposal 1: I receive $' + option[0][0] +
+                                               '; the Responder receives $' + option[0][1],
+                                               'Proposal 2: I receive $' + option[1][0] +
+                                               '; the Responder receives $' + option[1][1]]
+        self.participant.vars['proposer_selection'] = numpy.random.choice(self.participant.vars['option_str'],
+                                                                          p=self.session.vars['proposals'][choice]['p'])
         if self.round_number == self.session.vars['paying_round']:
-            self.session.vars['PR_proposer_options'] = self.session.vars['options']
-        self.session.vars['proposer_selection'] = random.choice(self.session.vars['options'])
-        proposer_selection_grouping = re.search('(.*)\:.*\$(\d).*\$(\d)', self.session.vars['proposer_selection'])
-        proposer_selection = proposer_selection_grouping.group(1) + r': He/She receives ' +\
-                             proposer_selection_grouping.group(2) + r'; You receive ' +\
-                             proposer_selection_grouping.group(3)
-        proposer_option1_grouping = re.search('(.*)\:.*\$(\d).*\$(\d)', self.session.vars['options'][0])
-        proposer_option1 = proposer_option1_grouping.group(1) + r': He/She receives ' + \
-                           proposer_option1_grouping.group(2) + r'; You receive ' + \
-                           proposer_option1_grouping.group(3)
-        proposer_option2_grouping = re.search('(.*)\:.*\$(\d).*\$(\d)', self.session.vars['options'][1])
-        proposer_option2 = proposer_option2_grouping.group(1) + r': He/She receives ' + \
-                           proposer_option2_grouping.group(2) + r'; You receive ' + \
-                           proposer_option2_grouping.group(3)
+            self.participant.vars['PR_proposer_options'] = self.participant.vars['option_str']
+            self.participant.vars['PR_proposer_selection'] = self.participant.vars['proposer_selection']
+        requests.post('http://127.0.0.1:5000/', json={'round': str(self.round_number),
+                                                      'proposals': [option[0][1], option[1][1]],
+                                                      'session': self.session.vars['session_code']})
+        selection = re.search("(.*):.*\$(\d).*\$(\d)", self.participant.vars['proposer_selection'])
+        proposer_selection = selection.group(1) + ': He/She receives $' + selection.group(2) +\
+                             '; You receive $' + selection.group(3)
+        if self.round_number == 1:
+            self.participant.vars['proposed'] = [selection.group(3)]
+        else:
+            self.participant.vars['proposed'].append(selection.group(3))
+        selection = re.search("(.*):.*\$(\d).*\$(\d)", self.participant.vars['option_str'][0])
+        proposer_option1 = selection.group(1) + ': He/She receives $' + selection.group(2) + '; You receive $' +\
+                           selection.group(3)
+        selection = re.search("(.*):.*\$(\d).*\$(\d)", self.participant.vars['option_str'][1])
+        proposer_option2 = selection.group(1) + ': He/She receives $' + selection.group(2) + '; You receive $' +\
+                           selection.group(3)
+
         return {
             'proposer_option1': proposer_option1,
             'proposer_option2': proposer_option2,
             'proposer_selection': proposer_selection,
             'round_number': self.round_number,
         }
-
-
-class ResultsWaitPage(WaitPage):
-
-    def after_all_players_arrive(self):
-        self.group.set_payoffs()
 
 
 class Instructions(Page):
@@ -69,29 +65,38 @@ class Results(Page):
         return self.round_number == Constants.num_rounds
 
     def vars_for_template(self):
+        for i in self.session.vars['choices_list']:
+            if i == 1:
+                self.participant.vars['responder_result'] = [[1, c(self.participant.vars['proposed'][0]),
+                                                             self.participant.vars['responded'][0],
+                                                             self.participant.vars['responder_payoff'][0]]]
+            else:
+                self.participant.vars['responder_result'].append([i, c(self.participant.vars['proposed'][i-1]),
+                                                                 self.participant.vars['responded'][i-1],
+                                                                  self.participant.vars['responder_payoff'][i-1]])
+        self.participant.vars['PR_responder_payoff'] =\
+            self.participant.vars['responder_payoff'][self.session.vars['paying_round'] - 1]
         return {
             'paying_round': self.session.vars['paying_round'],
-            'proposer_option1': self.session.vars['PR_proposer_options'][0],
-            'proposer_option2': self.session.vars['PR_proposer_options'][1],
-            'responder_payoff': self.session.vars['PR_responder_payoff'],
-            'proposer_selection': self.session.vars['PR_proposer_selection'],
-            'responder_selection': self.session.vars['PR_responder_selection'],
+            'responder_result': self.participant.vars['responder_result'],
+            'responder_payoff': self.participant.vars['PR_responder_payoff'],
         }
 
 
 class Chat(Page):
+    timeout_seconds = 120
 
-    timeout_seconds = 300
+    def vars_for_template(self):
+        return {'player': self.participant.id_in_session,
+                'session': self.session.vars['session_code']}
 
     def is_displayed(self):
         return self.round_number == 1
 
 
 page_sequence = [
-    Chat,
+    # Chat,
     Instructions,
     SendBack,
-    WaitForP2,
-    ResultsWaitPage,
     Results,
 ]

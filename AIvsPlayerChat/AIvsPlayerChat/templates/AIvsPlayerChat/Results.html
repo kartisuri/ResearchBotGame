@@ -8,18 +8,26 @@
 {% block content %}
 
     <p>
-        The paying round for this game is <b>Round {{ paying_round }}</b>.
+        The paying round for this game is <b>Round {{ paying_round }}</b>.<br/>
     </p>
-
     <p>
-        In round {{ paying_round }}, You were playing the role as a <b>Responder</b>.<br/>
-        <b>Proposer</b> was given with two options:<br/>
-        &nbsp;{{ proposer_option1 }} <br/>
-        &nbsp;{{ proposer_option2 }} <br/>
-        Proposer chose <b>{{ proposer_selection }}</b>.<br/>
-        You have <b>{{ responder_selection }}ed</b> the offer.
-        Therefore, your total payoff is {{ responder_payoff }}.
+        Therefore your payoff is <b>{{ responder_payoff }}</b>.<br/>
+        <b>Decision and Payoff History</b>
     </p>
-
+    <table style="width: 100%">
+        <tr>
+            <th>Round</th>
+            <th>Proposed Offer by Proposer</th>
+            <th>Your Decision</th>
+            <th>Your Payoff</th>
+        </tr>
+        {% for i, p, r, pay in responder_result %}
+        <tr>
+            <td width="15%">{{ i }}</td>
+            <td width="35%">{{ p }}</td>
+            <td width="35%">{{ r }}</td>
+            <td width="15%">{{ pay }}</td>
+        </tr>
+    {% endfor %}
+    </table>
 {% endblock %}
-
