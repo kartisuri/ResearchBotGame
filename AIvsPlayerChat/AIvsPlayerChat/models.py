@@ -57,14 +57,19 @@ class Player(BasePlayer):
                                         choices=['Accept', 'Reject'])
 
     def set_payoffs(self):
+        amount_split = re.search('(.*):.*\$(\d).*\$(\d)', self.participant.vars['proposer_selection'])
+        payoff = amount_split.group(2)
         if self.sent_back_amount == 'Accept':
-            amount_split = re.search('(.*):.*\$(\d).*\$(\d)', self.participant.vars['proposer_selection'])
-            self.payoff = amount_split.group(2)
+            if self.round_number == self.session.vars['paying_round']:
+                self.payoff = payoff
+            else:
+                self.payoff = 0
         else:
-            self.payoff = 0
+            payoff = 0
+            self.payoff = payoff
         if self.round_number == 1:
             self.participant.vars['responded'] = [self.sent_back_amount]
-            self.participant.vars['responder_payoff'] = [self.payoff]
+            self.participant.vars['responder_payoff'] = [payoff]
         else:
             self.participant.vars['responded'].append(self.sent_back_amount)
-            self.participant.vars['responder_payoff'].append(self.payoff)
+            self.participant.vars['responder_payoff'].append(payoff)
