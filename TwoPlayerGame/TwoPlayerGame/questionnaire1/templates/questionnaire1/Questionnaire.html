@@ -1,0 +1,45 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Questionnaire
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        This scale consists of a number of words that describe different feelings and emotions.<br/>
+        Read each item and then select the number from the below next to each word.<br/>
+        <b>Indicate to what extent you feel this way right now, that is, at the present moment.</b><br/>
+    </p>
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<td><b>1</b>&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+            <!--<td>Very Slightly or Not at All</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><b>2</b>&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+            <!--<td>A Little</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><b>3</b>&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+            <!--<td>Moderately</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><b>4</b>&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+            <!--<td>Quite a Bit</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><b>5</b>&nbsp;&nbsp;&nbsp;&nbsp;</td>-->
+            <!--<td>Extremely</td>-->
+        <!--</tr>-->
+    <!--</table>-->
+    <br/>
+
+    {% for field in form %}
+        {% formfield field %}
+    {% endfor %}
+
+    {% next_button %}
+
+{% endblock %}

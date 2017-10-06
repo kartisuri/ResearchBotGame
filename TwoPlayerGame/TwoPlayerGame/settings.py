@@ -106,6 +106,12 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'app_sequence': ['my_trust'],
     },
+    {
+        'name': 'questionnaire1',
+        'display_name': "PANAS Questionnaire",
+        'num_demo_participants': 1,
+        'app_sequence': ['questionnaire1'],
+    },
 ]
 
 # anything you put after the below line will override
