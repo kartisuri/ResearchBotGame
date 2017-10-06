@@ -22,9 +22,9 @@ class Send(Page):
                                                '; the Responder receives $' + option[1][1], ]
         if self.round_number == self.session.vars['paying_round']:
             self.participant.vars['PR_proposer_options'] = self.participant.vars['option_str']
-        requests.post('http://127.0.0.1:5000/', json={'round': str(self.round_number),
-                                                      'proposals': [option[0][1], option[1][1]],
-                                                      'session': self.session.vars['session_code']})
+        # requests.post('http://127.0.0.1:5000/', json={'round': str(self.round_number),
+        #                                               'proposals': [option[0][1], option[1][1]],
+        #                                               'session': self.session.vars['session_code']})
         return {
             'proposer_option1': self.participant.vars['option_str'][0],
             'proposer_option2': self.participant.vars['option_str'][1],
@@ -104,17 +104,17 @@ class Results(Page):
             if i == 1:
                 p1.participant.vars['proposer_result'] = [[1, c(p1.participant.vars['proposed'][0]),
                                                           p2.participant.vars['responded'][0],
-                                                          p1.participant.vars['proposer_payoff'][0]]]
+                                                          c(p1.participant.vars['proposer_payoff'][0])]]
                 p2.participant.vars['responder_result'] = [[1, c(p1.participant.vars['proposed'][0]),
                                                            p2.participant.vars['responded'][0],
-                                                           p2.participant.vars['responder_payoff'][0]]]
+                                                           c(p2.participant.vars['responder_payoff'][0])]]
             else:
                 p1.participant.vars['proposer_result'].append([i, c(p1.participant.vars['proposed'][i-1]),
                                                               p2.participant.vars['responded'][i-1],
-                                                              p1.participant.vars['proposer_payoff'][i-1]])
+                                                              c(p1.participant.vars['proposer_payoff'][i-1])])
                 p2.participant.vars['responder_result'].append([i, c(p1.participant.vars['proposed'][i-1]),
                                                                p2.participant.vars['responded'][i-1],
-                                                               p2.participant.vars['responder_payoff'][i-1]])
+                                                               c(p2.participant.vars['responder_payoff'][i-1])])
         p1.participant.vars['PR_proposer_payoff'] =\
             p1.participant.vars['proposer_payoff'][self.session.vars['paying_round']-1]
         p2.participant.vars['PR_responder_payoff'] =\
@@ -123,8 +123,8 @@ class Results(Page):
             'paying_round': self.session.vars['paying_round'],
             'proposer_result': p1.participant.vars['proposer_result'],
             'responder_result': p2.participant.vars['responder_result'],
-            'proposer_payoff': p1.participant.vars['PR_proposer_payoff'],
-            'responder_payoff': p2.participant.vars['PR_responder_payoff'],
+            'proposer_payoff': c(p1.participant.vars['PR_proposer_payoff']),
+            'responder_payoff': c(p2.participant.vars['PR_responder_payoff']),
         }
 
 

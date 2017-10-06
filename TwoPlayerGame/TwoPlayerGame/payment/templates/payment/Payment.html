@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Thank you
+{% endblock %}
+
+{% block content %}
+    <div class="panel panel-default" style="margin-bottom:10px">
+        <div class="panel-body">
+            <p><strong>Payment Info:</strong></p>
+            <p> Please remain seated until your <b>Label</b> is called.</p><br/>
+            <p>
+                Participant Label&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<b>{{ label }}</b><br/>
+                Participant Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<b>{{ code }}</b><br/>
+                Participation Fee&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<b>{{ fee }}</b><br/>
+                Payoff for the Game&nbsp;:&nbsp;<b>{{ payoff }}</b><br/>
+                Total Payoff will be&nbsp;&nbsp;&nbsp;:&nbsp;<b>{{ total }}</b>
+            </p>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block form %}
+
+{% endblock %}

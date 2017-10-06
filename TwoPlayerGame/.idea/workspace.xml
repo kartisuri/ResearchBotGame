@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="686db961-da29-4d70-bd37-aee980279f2b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/MyPage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/Results.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TwoPlayerGame/questionnaire2/templates/questionnaire2/MyPage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TwoPlayerGame/questionnaire2/templates/questionnaire2/Results.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../OTree/trust_simple/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../OTree/trust_simple/_builtin/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../OTree/trust_simple/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../OTree/trust_simple/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../OTree/trust_simple/templates/trust_simple/Instructions.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../OTree/trust_simple/templates/trust_simple/Results.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../OTree/trust_simple/templates/trust_simple/Send.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../OTree/trust_simple/templates/trust_simple/SendBack.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../OTree/trust_simple/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../OTree/trust_simple/views.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/models.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/Questionnaire.html" afterPath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/Questionnaire.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/views.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/questionnaire2/models.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/questionnaire2/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/questionnaire2/views.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/questionnaire2/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html" afterPath="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/settings.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,46 +30,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/models.py">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="1850">
+              <caret line="107" column="21" lean-forward="true" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Results.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="582">
+              <caret line="58" column="17" lean-forward="false" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+              <folding>
+                <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Instructions.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Instructions.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/views.py">
+        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
+            <state relative-caret-position="2525">
+              <caret line="101" column="43" lean-forward="true" selection-start-line="101" selection-start-column="43" selection-end-line="101" selection-end-column="43" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="757">
-              <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="10" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -101,7 +106,6 @@
         <option value="$PROJECT_DIR$/../AIvsPlayer/AIvsPlayer/views.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/settings.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Instaructions.html" />
-        <option value="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Chat.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Chat.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Results.html" />
@@ -109,17 +113,18 @@
         <option value="$PROJECT_DIR$/../OTree/settings.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/SendBack.html" />
-        <option value="$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/models.py" />
         <option value="$PROJECT_DIR$/../OTree/survey/models.py" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/Questionnaire.html" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/questionnaire2/templates/questionnaire2/Questionnaire.html" />
-        <option value="$PROJECT_DIR$/TwoPlayerGame/settings.py" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/models.py" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/views.py" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/questionnaire2/models.py" />
         <option value="$PROJECT_DIR$/TwoPlayerGame/questionnaire2/views.py" />
+        <option value="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html" />
+        <option value="$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" />
+        <option value="$PROJECT_DIR$/TwoPlayerGame/settings.py" />
       </list>
     </option>
   </component>
@@ -164,6 +169,27 @@
               <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
               <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
+              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
@@ -293,8 +319,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -333,7 +360,6 @@
         <state relative-caret-position="600">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -344,7 +370,7 @@
         <state relative-caret-position="975">
           <caret line="45" column="8" lean-forward="false" selection-start-line="43" selection-start-column="10" selection-end-line="45" selection-end-column="8" />
           <folding>
-            <element signature="e#0#20#0" expanded="false" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -362,7 +388,7 @@
         <state relative-caret-position="3900">
           <caret line="162" column="17" lean-forward="true" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
           <folding>
-            <element signature="e#0#20#0" expanded="false" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -372,7 +398,6 @@
         <state relative-caret-position="600">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -398,7 +423,7 @@
         <state relative-caret-position="975">
           <caret line="45" column="48" lean-forward="false" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="48" />
           <folding>
-            <element signature="e#0#20#0" expanded="false" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -408,7 +433,6 @@
         <state relative-caret-position="600">
           <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -434,7 +458,7 @@
         <state relative-caret-position="3575">
           <caret line="149" column="25" lean-forward="false" selection-start-line="149" selection-start-column="25" selection-end-line="149" selection-end-column="25" />
           <folding>
-            <element signature="e#0#20#0" expanded="false" />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -451,7 +475,6 @@
         <state relative-caret-position="450">
           <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
           </folding>
         </state>
@@ -468,13 +491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Instructions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -604,16 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1550">
-          <caret line="68" column="70" lean-forward="false" selection-start-line="68" selection-start-column="70" selection-end-line="68" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#20#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
@@ -633,9 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="757">
           <caret line="54" column="0" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#134#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -643,7 +646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -651,7 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -659,24 +660,74 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/MyPage.html" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/Questionnaire.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/templates/questionnaire2/Questionnaire.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="757">
+          <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2525">
+          <caret line="101" column="43" lean-forward="true" selection-start-line="101" selection-start-column="43" selection-end-line="101" selection-end-column="43" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/MyPage.html">
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Instructions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="400">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        <state relative-caret-position="582">
+          <caret line="58" column="17" lean-forward="false" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#table#1;n#!!top" expanded="true" />
           </folding>
@@ -685,62 +736,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TwoPlayerGame/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-18">
-          <caret line="92" column="0" lean-forward="true" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
+        <state relative-caret-position="1850">
+          <caret line="107" column="21" lean-forward="true" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/Questionnaire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/templates/questionnaire2/Questionnaire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
