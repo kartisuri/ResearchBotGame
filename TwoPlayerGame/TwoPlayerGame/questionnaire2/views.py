@@ -1,25 +1,21 @@
-from otree.api import Currency as c, currency_range
 from . import models
-from ._builtin import Page, WaitPage
-from .models import Constants
+from ._builtin import Page
 
 
-class MyPage(Page):
-    pass
-
-
-class ResultsWaitPage(WaitPage):
-
-    def after_all_players_arrive(self):
-        pass
-
-
-class Results(Page):
-    pass
+class Questionnaire(Page):
+    form_model = models.Player
+    form_fields = ['born_year',
+                   'gender',
+                   'studies_year',
+                   'school',
+                   'major',
+                   'nationality',
+                   'participation',
+                   'game_theory',
+                   'income'
+                   ]
 
 
 page_sequence = [
-    MyPage,
-    ResultsWaitPage,
-    Results
+    Questionnaire
 ]
