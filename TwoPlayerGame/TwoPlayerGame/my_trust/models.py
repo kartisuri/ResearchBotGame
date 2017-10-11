@@ -44,8 +44,8 @@ class Subsession(BaseSubsession):
                 self.session.vars['result_proposals'].append(responder_proposals)
             paying_round = random.randint(1, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
-            random_session_code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
-            self.session.vars['session_code'] = random_session_code
+            # random_session_code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+            self.session.vars['session_code'] = self.session.code
             self.group_randomly(fixed_id_in_group=True)
 
 
