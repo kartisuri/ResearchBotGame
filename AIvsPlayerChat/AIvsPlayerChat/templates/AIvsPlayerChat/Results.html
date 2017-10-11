@@ -10,11 +10,35 @@
     <p>
         The paying round for this game is <b>Round {{ paying_round }}</b>.<br/>
     </p>
+
+{% if player.id_in_group == 1 %}
+    <p>
+        Therefore your payoff is <b>{{ proposer_payoff }}</b>.<br/>
+        <b>Decision and Payoff History</b>
+    </p>
+    <table style="width: 100%">
+        <tr>
+            <th>Round</th>
+            <th>Proposed Offer to Responder</th>
+            <th>Responder's Decision</th>
+            <th>Your Payoff</th>
+        </tr>
+    {% for i, p, r, pay in proposer_result %}
+        <tr>
+            <td width="15%">{{ i }}</td>
+            <td width="35%">{{ p }}</td>
+            <td width="35%">{{ r }}</td>
+            <td width="15%">{{ pay }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
     <p>
         Therefore your payoff is <b>{{ responder_payoff }}</b>.<br/>
         <b>Decision and Payoff History</b>
     </p>
     <table style="width: 100%">
+
         <tr>
             <th>Round</th>
             <th>Proposed Offer by Proposer</th>
@@ -30,4 +54,8 @@
         </tr>
     {% endfor %}
     </table>
+{% endif %}
+
+{% next_button %}
+
 {% endblock %}

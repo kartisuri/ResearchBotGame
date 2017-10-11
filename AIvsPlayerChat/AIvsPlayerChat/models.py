@@ -13,7 +13,7 @@ Computer vs Player
 
 class Constants(BaseConstants):
     name_in_url = 'AIvsPlayerChat'
-    players_per_group = None
+    players_per_group = 2
     num_rounds = 10
     endowment = '10'
 
@@ -42,57 +42,41 @@ class Subsession(BaseSubsession):
                 self.session.vars['result_proposals'].append(responder_proposals)
             paying_round = random.randint(1, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
-            self.session.vars['session_code'] = self.session.code
+        self.group_randomly(fixed_id_in_group=True)
 
 
 class Group(BaseGroup):
-    pass
-
-
-class Player(BasePlayer):
     sent_back_amount = models.CharField(widget=widgets.RadioSelect(),
                                         doc="""Offer Amount Accepted/Rejected by P2""",
                                         choices=['Accept', 'Reject'])
-    competent = models.PositiveIntegerField(choices=[[1, 'Very Incompetent'],
-                                                     [2, 'Incompetent'], [3, 'Slightly Incompetent'],
-                                                     [4, 'Neutral'], [5, 'Slightly Competent'],
-                                                     [6, 'Competent'], [7, 'Very Competent']],
-                                            widget=widgets.RadioSelectHorizontal())
-    ignorant = models.PositiveIntegerField(choices=[[1, 'Very Ignorant'],
-                                                    [2, 'Ignorant'], [3, 'Slightly Ignorant'],
-                                                    [4, 'Neutral'], [5, 'Slightly Knowledgeable'],
-                                                    [6, 'Knowledgeable'], [7, 'Very Knowledgeable']],
-                                           widget=widgets.RadioSelectHorizontal())
-    responsible = models.PositiveIntegerField(choices=[[1, 'Very Irresponsible'],
-                                                       [2, 'Irresponsible'], [3, 'Slightly Irresponsible'],
-                                                       [4, 'Neutral'], [5, 'Slightly Responsible'],
-                                                       [6, 'Responsible'], [7, 'Very Responsible']],
-                                              widget=widgets.RadioSelectHorizontal())
-    intelligent = models.PositiveIntegerField(choices=[[1, 'Very Unintelligent'],
-                                                       [2, 'Unintelligent'], [3, 'Slightly Unintelligent'],
-                                                       [4, 'Neutral'], [5, 'Slightly Intelligent'],
-                                                       [6, 'Intelligent'], [7, 'Very Intelligent']],
-                                              widget=widgets.RadioSelectHorizontal())
-    sensible = models.PositiveIntegerField(choices=[[1, 'Very Foolish'],
-                                                    [2, 'Foolish'], [3, 'Slightly Foolish'],
-                                                    [4, 'Neutral'], [5, 'Slightly Sensible'],
-                                                    [6, 'Sensible'], [7, 'Very Sensible']],
-                                           widget=widgets.RadioSelectHorizontal())
 
     def set_payoffs(self):
-        amount_split = re.search('(.*):.*\$(\d).*\$(\d)', self.participant.vars['proposer_selection'])
-        payoff = amount_split.group(2)
+        p1 = self.get_player_by_id(1)
+        p2 = self.get_player_by_id(2)
+        amount_split = re.search('(.*):.*\$(\d).*\$(\d)', p1.participant.vars['proposer_selection'])
+        p1_pay = amount_split.group(2)
+        p2_pay = amount_split.group(3)
         if self.sent_back_amount == 'Accept':
             if self.round_number == self.session.vars['paying_round']:
-                self.payoff = payoff
+                p1.payoff = p1_pay
+                p2.payoff = p2_pay
             else:
-                self.payoff = 0
+                p1.payoff = 0
+                p2.payoff = 0
         else:
-            payoff = 0
-            self.payoff = payoff
+            p1_pay = 0
+            p2_pay = 0
+            p1.payoff = p1_pay
+            p2.payoff = p2_pay
         if self.round_number == 1:
-            self.participant.vars['responded'] = [self.sent_back_amount]
-            self.participant.vars['responder_payoff'] = [payoff]
+            p2.participant.vars['responded'] = [self.sent_back_amount]
+            p1.participant.vars['proposer_payoff'] = [p1_pay]
+            p2.participant.vars['responder_payoff'] = [p2_pay]
         else:
-            self.participant.vars['responded'].append(self.sent_back_amount)
-            self.participant.vars['responder_payoff'].append(payoff)
+            p2.participant.vars['responded'].append(self.sent_back_amount)
+            p1.participant.vars['proposer_payoff'].append(p1_pay)
+            p2.participant.vars['responder_payoff'].append(p2_pay)
+
+
+class Player(BasePlayer):
+    pass

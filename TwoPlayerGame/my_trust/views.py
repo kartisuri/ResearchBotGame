@@ -13,11 +13,11 @@ class Send(Page):
     def vars_for_template(self):
         choice = self.session.vars['shuffled_choices_list'][self.round_number - 1]
         option = [self.session.vars['proposals'][choice][choice * 10 + 1],
-                  self.session.vars['proposals'][choice][choice * 10 + 2], ]
+                  self.session.vars['proposals'][choice][choice * 10 + 2]]
         self.participant.vars['option_str'] = ['Proposal 1: I receive $' + option[0][0] +
                                                '; the Responder receives $' + option[0][1],
                                                'Proposal 2: I receive $' + option[1][0] +
-                                               '; the Responder receives $' + option[1][1], ]
+                                               '; the Responder receives $' + option[1][1]]
         if self.round_number == self.session.vars['paying_round']:
             self.participant.vars['PR_proposer_options'] = self.participant.vars['option_str']
         requests.post('http://10.25.182.175:5000/',

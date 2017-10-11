@@ -8,12 +8,19 @@
 {% block content %}
 
     <p>
-    To start, Participant A plays the role as a <b>Proposer</b>.<br/>
-    The Proposer receives two proposals which he/she can select to propose.<br/>
-    Participant B plays the role as a <b>Responder</b>.<br/>
-    The Responder then can decide to accept or reject the proposal made by the Proposer.
-    </p>
+        In each round, the <b>bot</b> will select <b>one</b> proposal from <b>two</b> proposals, namely,
+        Proposal 1 and Proposal 2, on dividing up <b>ten dollars</b> between Player A and Player B.<br/>
+        When the computer proposes <b>Y dollars to Player A and 10 – Y dollars to Player B</b>,<br/>
+        if the Player B <b>accepts</b> the proposal,<br/>
+        then the Player A will receive <b>Y dollars</b> and Player B will receive <b>10 – Y dollars</b>;<br/>
+        if Player B <b>rejects</b> the proposal, then both Player A and B will receive <b>0 dollars</b>.<br/>
+        <br/>
+        The bot will choose <b>Proposal 1 with probability P and Proposal 2 with probability 1–P</b>.<br/>
+        The <b>probability P</b> is determined based on the actual decisions made by participants in a similar study.<br/>
+        In a recent study conducted among <b>NTU students</b>,
+        proposal was chosen by <b>Player A him/herself</b> instead of the bot.<br/>
+        In that study, P proportion of Player A chose Proposal 1 and 1-P proportion chose Proposal 2.<br/>
 
-    {% next_button %}
+    </p>
 
 {% endblock %}

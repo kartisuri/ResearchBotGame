@@ -1,0 +1,4 @@
+PlayerNone	hi
+BotNone	Then what's your name?
+PlayerNone	hw r u
+BotNone	Como sabes?

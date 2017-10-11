@@ -1,14 +1,14 @@
 {% extends "global/Page.html" %}
 {% load staticfiles otree_tags%}
 {% block title %}
-    Chat Page
+    Chat Bot
 {% endblock %}
 {% block content %}
 
     <div class="container">
-        <h4 class="jumbotron-heading text-xs-center">Chat Room for chatting</h4>
+        <h4 class="jumbotron-heading text-xs-center">Chat Room for chat with bot</h4>
         <p class="lead text-xs-center">
-          This page allows you to chat.
+          This page allows you to chat with a human like chat bot.
         </p>
         <input type="hidden" id="player" name="player" value={{ player }}>
         <input type="hidden" id="session" name="session" value={{ session }}>

@@ -80,7 +80,7 @@ SESSION_CONFIGS = [
     {
         'name': 'AIvsPlayerChat',
         'display_name': "Computer vs Human",
-        'num_demo_participants': 1,
+        'num_demo_participants': 2,
         'app_sequence': ['questionnaire1', 'AIvsPlayerChat', 'questionnaire2', 'payment'],
     },
 ]

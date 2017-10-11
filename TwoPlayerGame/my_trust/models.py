@@ -42,7 +42,6 @@ class Subsession(BaseSubsession):
                 self.session.vars['result_proposals'].append(responder_proposals)
             paying_round = random.randint(1, Constants.num_rounds)
             self.session.vars['paying_round'] = paying_round
-            self.session.vars['session_code'] = self.session.code
         self.group_randomly(fixed_id_in_group=True)
 
 
@@ -83,34 +82,4 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    competent = models.PositiveIntegerField(choices=[[1, 'Very Incompetent'],
-                                                     [2, 'Incompetent'], [3, 'Slightly Incompetent'],
-                                                     [4, 'Neutral'], [5, 'Slightly Competent'],
-                                                     [6, 'Competent'], [7, 'Very Competent']],
-                                            widget=widgets.RadioSelectHorizontal())
-    ignorant = models.PositiveIntegerField(choices=[[1, 'Very Ignorant'],
-                                                    [2, 'Ignorant'], [3, 'Slightly Ignorant'],
-                                                    [4, 'Neutral'], [5, 'Slightly Knowledgeable'],
-                                                    [6, 'Knowledgeable'], [7, 'Very Knowledgeable']],
-                                           widget=widgets.RadioSelectHorizontal())
-    responsible = models.PositiveIntegerField(choices=[[1, 'Very Irresponsible'],
-                                                       [2, 'Irresponsible'], [3, 'Slightly Irresponsible'],
-                                                       [4, 'Neutral'], [5, 'Slightly Responsible'],
-                                                       [6, 'Responsible'], [7, 'Very Responsible']],
-                                              widget=widgets.RadioSelectHorizontal())
-    intelligent = models.PositiveIntegerField(choices=[[1, 'Very Unintelligent'],
-                                                       [2, 'Unintelligent'], [3, 'Slightly Unintelligent'],
-                                                       [4, 'Neutral'], [5, 'Slightly Intelligent'],
-                                                       [6, 'Intelligent'], [7, 'Very Intelligent']],
-                                              widget=widgets.RadioSelectHorizontal())
-    sensible = models.PositiveIntegerField(choices=[[1, 'Very Foolish'],
-                                                    [2, 'Foolish'], [3, 'Slightly Foolish'],
-                                                    [4, 'Neutral'], [5, 'Slightly Sensible'],
-                                                    [6, 'Sensible'], [7, 'Very Sensible']],
-                                           widget=widgets.RadioSelectHorizontal())
-
-    def role(self):
-        if self.id_in_group == 1:
-            return 'Proposer'
-        else:
-            return 'Responder'
+    pass
