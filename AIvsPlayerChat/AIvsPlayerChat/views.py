@@ -1,8 +1,7 @@
 from . import models
-from ._builtin import Page, WaitPage
+from ._builtin import Page
 from .models import Constants
 from otree.api import Currency as c
-import random
 import re
 import requests
 import numpy
@@ -11,9 +10,6 @@ import numpy
 class SendBack(Page):
     form_model = models.Player
     form_fields = ['sent_back_amount']
-
-    def before_next_page(self):
-        self.player.set_payoffs()
 
     def vars_for_template(self):
         choice = self.session.vars['shuffled_choices_list'][self.round_number - 1]
@@ -28,9 +24,10 @@ class SendBack(Page):
         if self.round_number == self.session.vars['paying_round']:
             self.participant.vars['PR_proposer_options'] = self.participant.vars['option_str']
             self.participant.vars['PR_proposer_selection'] = self.participant.vars['proposer_selection']
-        requests.post('http://127.0.0.1:5000/', json={'round': str(self.round_number),
-                                                      'proposals': [option[0][1], option[1][1]],
-                                                      'session': self.session.vars['session_code']})
+        requests.post('http://10.25.182.175:5000/',
+                      json={'round': str(self.round_number),
+                            'proposals': [option[0][1], option[1][1]],
+                            'session': self.session.vars['session_code']})
         selection = re.search("(.*):.*\$(\d).*\$(\d)", self.participant.vars['proposer_selection'])
         proposer_selection = selection.group(1) + ': He/She receives $' + selection.group(2) +\
                              '; You receive $' + selection.group(3)
@@ -51,6 +48,9 @@ class SendBack(Page):
             'proposer_selection': proposer_selection,
             'round_number': self.round_number,
         }
+
+    def before_next_page(self):
+        self.player.set_payoffs()
 
 
 class Instructions(Page):
@@ -87,15 +87,29 @@ class Chat(Page):
     timeout_seconds = 120
 
     def vars_for_template(self):
-        return {'player': self.participant.id_in_session,
+        return {'player': self.participant.label,
                 'session': self.session.vars['session_code']}
 
     def is_displayed(self):
         return self.round_number == 1
 
 
+class Questionnaire(Page):
+    form_model = models.Player
+    form_fields = ['competent',
+                   'ignorant',
+                   'responsible',
+                   'intelligent',
+                   'sensible'
+                   ]
+
+    def is_displayed(self):
+        return self.round_number == 1
+
+
 page_sequence = [
-    # Chat,
+    Chat,
+    Questionnaire,
     Instructions,
     SendBack,
     Results,

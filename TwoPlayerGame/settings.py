@@ -78,10 +78,10 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'AIvsPlayerChat',
-        'display_name': "Computer vs Human",
-        'num_demo_participants': 1,
-        'app_sequence': ['questionnaire1', 'AIvsPlayerChat', 'questionnaire2', 'payment'],
+        'name': 'my_trust',
+        'display_name': "Human vs Human",
+        'num_demo_participants': 2,
+        'app_sequence': ['questionnaire1', 'my_trust', 'questionnaire2', 'payment'],
     },
 ]
 
