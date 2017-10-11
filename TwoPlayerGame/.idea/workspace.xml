@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="686db961-da29-4d70-bd37-aee980279f2b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Chat.html" afterPath="$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Chat.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/models.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/views.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/questionnaire1/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TwoPlayerGame/settings.py" afterPath="$PROJECT_DIR$/TwoPlayerGame/settings.py" />
-    </list>
+    <list default="true" id="686db961-da29-4d70-bd37-aee980279f2b" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
