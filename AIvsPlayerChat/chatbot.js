@@ -5,7 +5,7 @@ var options = {
   url: 'https://aiaas.pandorabots.com',
   app_id: '1409616151592',
   user_key: '9d8029f6a3a208bccfa67a8d4b089f32',
-  botname: 'alicebot'
+  botname: 'rosiebot'
 };
 
 var bot = new Pandorabot(options);
