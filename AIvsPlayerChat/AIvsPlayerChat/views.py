@@ -52,17 +52,17 @@ class SendBack(Page):
     def vars_for_template(self):
         p1 = self.group.get_player_by_id(1)
         selection = re.search("(.*):.*\$(\d).*\$(\d)", p1.participant.vars['proposer_selection'])
-        proposer_selection = selection.group(1) + ': He/She receives $' + selection.group(2) +\
+        proposer_selection = selection.group(1) + ': Player A receives $' + selection.group(2) +\
                              '; You receive $' + selection.group(3)
         if self.round_number == 1:
             p1.participant.vars['proposed'] = [selection.group(3)]
         else:
             p1.participant.vars['proposed'].append(selection.group(3))
         selection = re.search("(.*):.*\$(\d).*\$(\d)", p1.participant.vars['option_str'][0])
-        proposer_option1 = selection.group(1) + ': He/She receives $' + selection.group(2) + '; You receive $' +\
+        proposer_option1 = selection.group(1) + ': Player A receives $' + selection.group(2) + '; You receive $' +\
                            selection.group(3)
         selection = re.search("(.*):.*\$(\d).*\$(\d)", p1.participant.vars['option_str'][1])
-        proposer_option2 = selection.group(1) + ': He/She receives $' + selection.group(2) + '; You receive $' +\
+        proposer_option2 = selection.group(1) + ': Player A receives $' + selection.group(2) + '; You receive $' +\
                            selection.group(3)
 
         return {
