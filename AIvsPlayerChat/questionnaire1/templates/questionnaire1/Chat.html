@@ -29,6 +29,8 @@
     <script src="{% static 'js/jquery.js' %}"></script>
     <script src="{% static 'js/js.cookie.js' %}"></script>
     <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
+
     <script>
 
         var csrftoken = Cookies.get('csrftoken');
@@ -55,32 +57,9 @@
             $chatlog.append($row);
         }
 
-        function cleverBot(){
-            var key = "CC4qciuY4mXNry59ImrYA_clkgA";
-            var id = document.getElementById("player").value;
-            send("Player"+id, $input.val());
-            createRow($input.val());
-            $.ajax({
-                url: "https://www.cleverbot.com/getreply",
-                data: {"input": $input.val(), "key": key},
-                dataType: "jsonp",
-                success: ProcessReply
-            });
-            function ProcessReply (data) {
-                if (data.error) {
-                    console.log ('Error: ' + data.error);
-                } else {
-                    send("Bot"+id, data.output);
-                    createRow(data.output);
-                    $input.val('');
-                    $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-                }
-            }
-        }
-
         function send(id, data){
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://10.25.182.175:5000/', true);
+            xhr.open('POST', 'http://10.25.182.227:5000/', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.send(JSON.stringify({
                 "round": "0",
@@ -90,37 +69,33 @@
             }));
         }
 
-//        function say() {
-//            var inputData = {
-//                'text': $input.val(),
-//                'id': document.getElementById("player").value,
-//                'session': document.getElementById("session").value,
-//                'round': 0
-//            };
-//            createRow(inputData.text);
-//            var xhr = new XMLHttpRequest();
-//            xhr.open('POST', 'http://192.168.99.1:5000/', true);
-//            xhr.setRequestHeader('Content-Type', 'application/json');
-//            xhr.send(inputData);
-//            xhr.onreadystatechange = function () {
-//                if (xhr.readyState === XMLHttpRequest.DONE) {
-//                    createRow(xhr.responseText);
-//                    $input.val('');
-//                    $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-//                }
-//            };
-//        }
+        function say() {
+            var text = $input.val();
+            var id = document.getElementById("player").value;
+            send("Player"+id, text);
+            createRow(text);
+            $input.val('');
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://10.25.182.227:4000/', true);
+            xhr.setRequestHeader('Content-Type', 'text/plain');
+            xhr.send(text);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    createRow(xhr.responseText);
+                    send("Bot"+id, xhr.responseText);
+                    $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+                }
+            };
+        }
 
         $sayButton.click(function() {
-//            say();
-            cleverBot();
+            say();
         });
 
         $(document).keypress(function (e) {
             if (e.which === 13) {
                 e.preventDefault();
-//                say();
-                cleverBot();
+                say();
             }
         });
 

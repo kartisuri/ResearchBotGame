@@ -1,0 +1,30 @@
+<aiml version="2.0">
+
+<category><pattern>WHAT IS YOUR NAME</pattern><template>My name is Alice</template></category>
+
+
+        
+<category><pattern>ARE YOU A HUMAN</pattern><template>No I am a bot</template></category>
+
+
+        
+<category><pattern>ARE YOU A FEMALE</pattern><template>I am a Female bot</template></category>
+
+
+        
+<category><pattern>WHAT IS YOUR NAME</pattern><template>My name is Alice. What is yours?</template></category>
+
+
+        
+<category><pattern>WHAT IS YOUR NAME</pattern><template>karthik</template></category>
+
+
+        
+<category><pattern>WHAT IS YOUR NAME</pattern><template>My name is Alice. What is yours?</template></category>
+
+
+        
+<category><pattern>U ALREADY DID</pattern><template>is it. What else did i do?</template></category>
+
+
+</aiml>

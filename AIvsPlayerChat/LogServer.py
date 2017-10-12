@@ -10,6 +10,12 @@ import signal
 import tornado.options
 
 from os.path import abspath, dirname, join
+from pb_py import main as API
+
+host = 'aiaas.pandorabots.com'
+user_key = '9d8029f6a3a208bccfa67a8d4b089f32'
+app_id = '1409616151592'
+botname = 'alicebot'
 
 is_closing = False
 
@@ -17,8 +23,10 @@ class IndexPageHandler(tornado.web.RequestHandler):
 
     def set_default_headers(self):
         self.set_header("Access-Control-Allow-Origin", "*")
-        self.set_header("Access-Control-Allow-Headers", "Content-Type")
-        self.set_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
+        self.set_header("Access-Control-Allow-Headers",
+            "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers")
+        self.set_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, HEAD')
+        self.set_header("Access-Control-Allow-Credentials", "false")
     
     def post(self):
         data = {'round': ''}
@@ -27,6 +35,9 @@ class IndexPageHandler(tornado.web.RequestHandler):
             data = json.loads(self.request.body)
             if data['round'] == '0':
             	log_chat(data['session'], data['id'], data['text'])
+            elif data['round'] == 'alice':
+                self.write(chat_alice(data['input']))
+                self.finish()
             else:
             	log_round_proposals(data['session'], data['round'], data['proposals'])
 
@@ -41,6 +52,11 @@ class Application(tornado.web.Application):
         handlers = [(r'/', IndexPageHandler)]
         settings = {'template_path': 'templates'}
         tornado.web.Application.__init__(self, handlers, **settings)
+
+def chat_alice(input_text):
+    result = API.talk(user_key, app_id, host, botname, input_text)
+    bot_response = result['response']
+    return bot_response
 
 def log_chat(session, id, text):
     file_name = join(dirname(abspath(__file__)), 'Chat_Logs_' + session +'.txt')
@@ -73,7 +89,7 @@ def try_exit():
     if is_closing:
         tornado.ioloop.IOLoop.instance().stop()
 
-def test_log():
+def test():
     log_round_proposals('ABC', '1', ['1', '2'])
     log_round_proposals('ABC', '2', ['c', 'd'])
     log_chat('ABC', 'P1', 'Hi')
@@ -83,7 +99,7 @@ def test_log():
     log_chat('DEF', 'P1', 'Hi')
     log_chat('DEF', 'B1', 'Hi there')
 
-# test_log()	
+# test()	
 
 if __name__ == '__main__':
     tornado.options.parse_command_line()

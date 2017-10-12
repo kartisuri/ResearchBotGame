@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="686db961-da29-4d70-bd37-aee980279f2b" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Chat.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Questionnaire.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/static/css/bootstrap.css" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/static/css/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/static/css/custom.css" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/static/css/custom.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/static/favicon.ico" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/static/favicon.ico" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/static/img/chatterbot.png" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/static/img/chatterbot.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/static/js/bootstrap.js" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/static/js/bootstrap.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/static/js/jquery.js" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/static/js/jquery.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/static/js/js.cookie.js" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/static/js/js.cookie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/models.py" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Instructions.html" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Instructions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Results.html" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/SendBack.html" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/SendBack.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/payment/views.py" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/payment/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/models.py" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/views.py" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/settings.py" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/LogServer.py" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/LogServer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_trust/models.py" afterPath="$PROJECT_DIR$/my_trust/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_trust/views.py" afterPath="$PROJECT_DIR$/my_trust/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/payment/views.py" afterPath="$PROJECT_DIR$/payment/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="757">
-              <caret line="81" column="32" lean-forward="true" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
+            <state relative-caret-position="25">
+              <caret line="103" column="93" lean-forward="false" selection-start-line="103" selection-start-column="66" selection-end-line="103" selection-end-column="93" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -50,11 +31,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Chat.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="761">
+              <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_trust/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="52" column="43" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="43" />
+            <state relative-caret-position="1175">
+              <caret line="52" column="43" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="43" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -76,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Send.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="500">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -135,7 +136,6 @@
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Welcome.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/ChatQuestionnaire.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/models.py" />
-        <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Instructions.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/SendBack.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Results.html" />
@@ -143,11 +143,12 @@
         <option value="$PROJECT_DIR$/my_trust/models.py" />
         <option value="$PROJECT_DIR$/my_trust/views.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/settings.py" />
-        <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/views.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/payment/views.py" />
         <option value="$PROJECT_DIR$/payment/views.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Send.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py" />
+        <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/views.py" />
+        <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html" />
       </list>
     </option>
   </component>
@@ -181,38 +182,37 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="my_trust" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TwoPlayerGame" type="462c0819:PsiDirectoryNode" />
-              <item name="payment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
-              <item name="payment" type="462c0819:PsiDirectoryNode" />
+              <item name="questionnaire1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
+              <item name="questionnaire1" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TwoPlayerGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AIvsPlayerChat" type="462c0819:PsiDirectoryNode" />
+              <item name="questionnaire1" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="questionnaire1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,97 +352,34 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../OTree/survey/templates/survey/CognitiveReflectionTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OTree/survey/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../OTree/survey/templates/survey/CognitiveReflectionTest.html" />
+    <entry file="file://$PROJECT_DIR$/../OTree/survey/views.py" />
     <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/MyPage.html" />
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1450">
-          <caret line="58" column="17" lean-forward="false" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="82" column="50" lean-forward="false" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/questionnaire1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="22" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/payment/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Results.html" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Chat.html" />
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/questionnaire1.html" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/payment/models.py" />
     <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/payment/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/payment/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/payment/views.py" />
     <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/payment/templates/payment/payment.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="4" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/models.py" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/views.py" />
     <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire2/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -450,31 +387,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="757">
           <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/templates/questionnaire2/Questionnaire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/payment/templates/payment/Payment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="17" lean-forward="true" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire2/templates/questionnaire2/Questionnaire.html" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/payment/templates/payment/Payment.html" />
     <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Questionnaire.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -482,87 +403,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/Questionnaire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="78" column="13" lean-forward="true" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3250">
-          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1018">
-          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/Welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Instructions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" column="33" lean-forward="false" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/tests.py" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/Questionnaire.html" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/models.py" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/views.py" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/models.py" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/views.py" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/settings.py" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/questionnaire1/templates/questionnaire1/Welcome.html" />
+    <entry file="file://$PROJECT_DIR$/TwoPlayerGame/my_trust/templates/my_trust/Instructions.html" />
     <entry file="file://$PROJECT_DIR$/questionnaire1/templates/questionnaire1/Welcome.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -570,31 +426,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="19" column="14" lean-forward="false" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="121" column="4" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="127" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Questionnaire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Chat.html" />
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Questionnaire.html" />
     <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1300">
           <caret line="52" column="4" lean-forward="true" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -602,15 +442,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="100" lean-forward="true" selection-start-line="10" selection-start-column="100" selection-end-line="10" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1725">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -618,7 +449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -626,7 +456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -634,7 +463,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="21" column="106" lean-forward="true" selection-start-line="21" selection-start-column="106" selection-end-line="21" selection-end-column="106" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -642,7 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -650,7 +477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -658,7 +484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-525">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,7 +491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="657">
           <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -674,9 +498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="632">
           <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#100#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -685,7 +506,7 @@
         <state relative-caret-position="1032">
           <caret line="76" column="8" lean-forward="true" selection-start-line="76" selection-start-column="8" selection-end-line="76" selection-end-column="8" />
           <folding>
-            <element signature="e#0#100#0" expanded="true" />
+            <element signature="e#0#100#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -694,7 +515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -702,17 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="25" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -720,9 +529,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
           <caret line="83" column="58" lean-forward="false" selection-start-line="83" selection-start-column="58" selection-end-line="83" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -737,15 +543,15 @@
     <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Send.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_trust/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="52" column="43" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="43" />
+        <state relative-caret-position="1175">
+          <caret line="52" column="43" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="43" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -754,11 +560,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="81" column="32" lean-forward="true" selection-start-line="81" selection-start-column="32" selection-end-line="81" selection-end-column="32" />
+        <state relative-caret-position="25">
+          <caret line="103" column="93" lean-forward="false" selection-start-line="103" selection-start-column="66" selection-end-line="103" selection-end-column="93" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="761">
+          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
