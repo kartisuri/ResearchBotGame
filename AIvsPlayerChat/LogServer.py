@@ -10,12 +10,6 @@ import signal
 import tornado.options
 
 from os.path import abspath, dirname, join
-from pb_py import main as API
-
-host = 'aiaas.pandorabots.com'
-user_key = '9d8029f6a3a208bccfa67a8d4b089f32'
-app_id = '1409616151592'
-botname = 'alicebot'
 
 is_closing = False
 
@@ -35,9 +29,6 @@ class IndexPageHandler(tornado.web.RequestHandler):
             data = json.loads(self.request.body)
             if data['round'] == '0':
             	log_chat(data['session'], data['id'], data['text'])
-            elif data['round'] == 'alice':
-                self.write(chat_alice(data['input']))
-                self.finish()
             else:
             	log_round_proposals(data['session'], data['round'], data['proposals'])
 
@@ -52,11 +43,6 @@ class Application(tornado.web.Application):
         handlers = [(r'/', IndexPageHandler)]
         settings = {'template_path': 'templates'}
         tornado.web.Application.__init__(self, handlers, **settings)
-
-def chat_alice(input_text):
-    result = API.talk(user_key, app_id, host, botname, input_text)
-    bot_response = result['response']
-    return bot_response
 
 def log_chat(session, id, text):
     file_name = join(dirname(abspath(__file__)), 'Chat_Logs_' + session +'.txt')
