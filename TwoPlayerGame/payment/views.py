@@ -19,3 +19,4 @@ class Payment(Page):
 page_sequence = [
     Payment
 ]
+
