@@ -2,8 +2,11 @@
   <dictionary name="Karthik">
     <words>
       <w>botname</w>
+      <w>contsants</w>
+      <w>elif</w>
       <w>pandorabot</w>
       <w>rosiebot</w>
+      <w>subsession</w>
     </words>
   </dictionary>
 </component>

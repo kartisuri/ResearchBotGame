@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Here were the amount requested by both the players:<br/>
+        {% if player.id_in_group == 1 %}
+            Your requested amount was <b>{{ player1_guess }}</b>.<br/>
+            Other player requested amount was <b>{{ player2_guess }}</b>.
+        {% else %}
+            Your requested amount was <b>{{ player2_guess }}</b>.<br/>
+            Other player requested amount was <b>{{ player1_guess }}</b>.
+        {% endif %}
+    </p>
+
+    <p>
+        {% if player.is_bonus == 1 %}
+            You have requested exactly <b>$1</b> less than the other player.<br/>
+            Therefore you receive a bonus of <b>$20</b>.<br/>
+        {% elif player.is_bonus == 2 %}
+            You have requested $20 and the other player have requested $11.<br/>
+            Therefore you receive a bonus of <b>$20</b>.<br/>
+        {% endif %}
+        <br/>
+        Your payoff is <b>{{ player.payoff }}</b>.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}
+
+

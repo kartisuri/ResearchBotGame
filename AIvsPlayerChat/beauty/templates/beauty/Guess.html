@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Your Request
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.guess label="What amount of money do you request?" %}
+    {% next_button %}
+
+{% endblock %}

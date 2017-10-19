@@ -71,7 +71,7 @@ mturk_hit_settings = {
 # e.g. self.session.config['participation_fee']
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 0.000,
-    'participation_fee': 10.00,
+    'participation_fee': 5.00,
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
 }
@@ -82,6 +82,12 @@ SESSION_CONFIGS = [
         'display_name': "Computer vs Human",
         'num_demo_participants': 2,
         'app_sequence': ['questionnaire1', 'AIvsPlayerChat', 'questionnaire2', 'payment'],
+    },
+    {
+        'name': 'beauty',
+        'display_name': "Beauty Game",
+        'num_demo_participants': 2,
+        'app_sequence': ['beauty', 'payment'],
     },
 ]
 

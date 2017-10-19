@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../AIvsPlayerChat/.idea/AIvsPlayerChat.iml" filepath="$PROJECT_DIR$/../AIvsPlayerChat/.idea/AIvsPlayerChat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../OTree/.idea/OTree.iml" filepath="$PROJECT_DIR$/../OTree/.idea/OTree.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/OTree/.idea/OTree.iml" filepath="$USER_HOME$/Desktop/OTree/.idea/OTree.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/TwoPlayerGame.iml" filepath="$PROJECT_DIR$/.idea/TwoPlayerGame.iml" />
     </modules>
   </component>
