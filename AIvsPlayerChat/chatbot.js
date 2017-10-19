@@ -3,8 +3,8 @@ var Pandorabot = require('pb-node');
 
 var options = {
   url: 'https://aiaas.pandorabots.com',
-  app_id: '1409616151592',
-  user_key: '9d8029f6a3a208bccfa67a8d4b089f32',
+  app_id: '1409616272199',
+  user_key: 'e8a6d54095d026bff5031b37a0df2f53',
   botname: 'rosiebot'
 };
 
@@ -30,18 +30,18 @@ server.on('request', function(request, response) {
 			headers["Access-Control-Max-Age"] = '86400'; // 24 hours
 			headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
 			response.writeHead(200, headers);
-			var talkParams = {input: body}
+			var talkParams = {input: body};
 			bot.talk(talkParams, function (err, res) {
 				if (!err) {
 					console.log(res);
 					response.end(res.responses[0]);
-				};
+				}
 			});
         });
 	}
     else
     {
-        console.log("GET");
+        console.log("POST not received");
         var html = '<html><body>Only http POST allowed with header: text/plain</body></html>';
         response.writeHead(200, {'Content-Type': 'text/html'});
         response.end(html);

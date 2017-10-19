@@ -57,18 +57,6 @@
             $chatlog.append($row);
         }
 
-        function send(id, data){
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://10.25.182.227:5000/', true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.send(JSON.stringify({
-                "round": "0",
-                "session": document.getElementById("session").value,
-                "id": id,
-                "text": data
-            }));
-        }
-
         function cleverbot(){
             var key = "CC4qciuY4mXNry59ImrYA_clkgA";
             var id = document.getElementById("player").value;
@@ -92,6 +80,18 @@
             }
         }
 
+        function send(id, data){
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://10.25.182.148:5000/', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify({
+                "round": "0",
+                "session": document.getElementById("session").value,
+                "id": id,
+                "text": data
+            }));
+        }
+
         function say() {
             var text = $input.val();
             var id = document.getElementById("player").value;
@@ -99,7 +99,7 @@
             createRow(text);
             $input.val('');
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://10.25.182.227:4000/', true);
+            xhr.open('POST', 'http://10.25.182.148:4000/', true);
             xhr.setRequestHeader('Content-Type', 'text/plain');
             xhr.send(text);
             xhr.onreadystatechange = function () {
@@ -112,15 +112,15 @@
         }
 
         $sayButton.click(function() {
-//            say();
-            cleverbot();
+            say();
+//            cleverbot();
         });
 
         $(document).keypress(function (e) {
             if (e.which === 13) {
                 e.preventDefault();
-//                say();
-                cleverbot();
+                say();
+//                cleverbot();
             }
         });
 

@@ -22,7 +22,7 @@ class Send(Page):
         if self.round_number == self.session.vars['paying_round']:
             self.participant.vars['PR_proposer_options'] = self.participant.vars['option_str']
             self.participant.vars['PR_proposer_selection'] = self.participant.vars['proposer_selection']
-        requests.post('http://10.25.182.175:5000/',
+        requests.post('http://10.25.182.148:5000/',
                       json={'round': str(self.round_number),
                             'proposals': [option[0][1], option[1][1]],
                             'session': self.session.code})

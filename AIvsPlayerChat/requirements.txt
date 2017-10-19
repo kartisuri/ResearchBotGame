@@ -1,3 +1,5 @@
+dj-config-url
+tornado
 numpy
 otree
 requests
