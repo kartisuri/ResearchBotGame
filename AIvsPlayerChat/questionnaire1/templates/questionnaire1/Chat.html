@@ -69,6 +69,29 @@
             }));
         }
 
+        function cleverbot(){
+            var key = "CC4qciuY4mXNry59ImrYA_clkgA";
+            var id = document.getElementById("player").value;
+            send("Player"+id, $input.val());
+            createRow($input.val());
+            $.ajax({
+                url: "https://www.cleverbot.com/getreply",
+                data: {"input": $input.val(), "key": key},
+                dataType: "jsonp",
+                success: ProcessReply
+            });
+            function ProcessReply (data) {
+                if (data.error) {
+                    console.log ('Error: ' + data.error);
+                } else {
+                    send("Bot"+id, data.output);
+                    createRow(data.output);
+                    $input.val('');
+                    $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+                }
+            }
+        }
+
         function say() {
             var text = $input.val();
             var id = document.getElementById("player").value;
@@ -89,13 +112,15 @@
         }
 
         $sayButton.click(function() {
-            say();
+//            say();
+            cleverbot();
         });
 
         $(document).keypress(function (e) {
             if (e.which === 13) {
                 e.preventDefault();
-                say();
+//                say();
+                cleverbot();
             }
         });
 
