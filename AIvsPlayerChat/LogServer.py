@@ -34,7 +34,7 @@ class IndexPageHandler(tornado.web.RequestHandler):
             if data['round'] == '0':
                 log_chat(data['session'], data['id'], data['text'])
             else:
-                log_round_proposals(data['session'], data['round'], data['proposals'])
+                log_round_proposals(data['session'], data['round'], data['proposals'], data['chosen'])
 
     def get(self):
         pass
@@ -51,7 +51,8 @@ class Application(tornado.web.Application):
 
 
 def log_chat(session, id_value, text):
-    file_name = join(dirname(abspath(__file__)), 'Chat_Logs_' + session + '.txt')
+    player_id = id_value.split('_')[1]
+    file_name = join(dirname(abspath(__file__)), 'Chat_Logs_' + session + 'Player_' + player_id + '.txt')
     if not os.path.isfile(file_name):
         with open(file_name, 'w') as ro:
             string = id_value + '\t' + text + '\n'
@@ -62,15 +63,19 @@ def log_chat(session, id_value, text):
             ro.write(string)
 
 
-def log_round_proposals(session, round_num, proposals):
+def log_round_proposals(session, round_num, proposals, proposal_chosen=None):
     file_name = join(dirname(abspath(__file__)), 'Round_Proposals_' + session + '.txt')
     if not os.path.isfile(file_name):
         with open(file_name, 'w') as ro:
-            string = 'Round' + round_num + ' Proposals:\t' + str(proposals) + '\n'
+            string = "Round: %s\tProposals: %s\tProposal Selected: %s\n" % (str(round_num),
+                                                                            str(proposals),
+                                                                            str(proposal_chosen))
             ro.write(string)
     else:
         with open(file_name, 'a') as ro:
-            string = 'Round' + round_num + ' Proposals:\t' + str(proposals) + '\n'
+            string = "Round: %s\tProposals: %s\tProposal Selected: %s\n" % (str(round_num),
+                                                                            str(proposals),
+                                                                            str(proposal_chosen))
             ro.write(string)
 
 

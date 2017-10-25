@@ -72,7 +72,7 @@
                 if (data.error) {
                     console.log ('Error: ' + data.error);
                 } else {
-                    send("Bot"+id, data.output);
+                    send("Bot_"+id, data.output);
                     createRow(data.output);
                     $input.val('');
                     $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
@@ -95,7 +95,7 @@
         function say() {
             var text = $input.val();
             var id = document.getElementById("player").value;
-            send("Player"+id, text);
+            send("Player_"+id, text);
             createRow(text);
             $input.val('');
             var xhr = new XMLHttpRequest();
