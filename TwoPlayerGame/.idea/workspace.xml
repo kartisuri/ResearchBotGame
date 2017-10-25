@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="686db961-da29-4d70-bd37-aee980279f2b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../AIvsPlayerChat/chatbot.js" afterPath="$PROJECT_DIR$/../AIvsPlayerChat/chatbot.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,11 +29,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chat.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Chat.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="98" column="37" lean-forward="false" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="37" />
+            <state relative-caret-position="407">
+              <caret line="101" column="32" lean-forward="true" selection-start-line="101" selection-start-column="32" selection-end-line="101" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chatbot.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/chatbot.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -112,7 +122,6 @@
         <option value="$PROJECT_DIR$/payment/views.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Send.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Welcome.html" />
-        <option value="$PROJECT_DIR$/../AIvsPlayerChat/chatbot.js" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/templates/AIvsPlayerChat/Instructions.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/ChatQuestionnaire.html" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Questionnaire.html" />
@@ -141,6 +150,7 @@
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/AIvsPlayerChat/models.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/views.py" />
         <option value="$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html" />
+        <option value="$PROJECT_DIR$/../AIvsPlayerChat/chatbot.js" />
       </list>
     </option>
   </component>
@@ -150,7 +160,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -305,7 +315,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -342,13 +352,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/questionnaire1/templates/questionnaire1/ChatQuestionnaire.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/questionnaire1/templates/questionnaire1/Questionnaire.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -745,8 +748,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/questionnaire1/templates/questionnaire1/Chat.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="98" column="37" lean-forward="false" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="37" />
+        <state relative-caret-position="407">
+          <caret line="101" column="32" lean-forward="true" selection-start-line="101" selection-start-column="32" selection-end-line="101" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AIvsPlayerChat/chatbot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="20" column="2" lean-forward="true" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
           <folding />
         </state>
       </provider>

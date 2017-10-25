@@ -13,6 +13,12 @@ var port = 4000;
 var server = http.createServer().listen(port, '0.0.0.0');
 
 console.log("Server is listening at " + port);
+var Params = {input: "My name is Participant."};
+bot.talk(Params, function (err, res) {
+    if (!err) {
+        console.log(res);
+    }
+});
 server.on('request', function(request, response) {
 	if (request.method == 'POST')
 	{
