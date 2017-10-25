@@ -13,6 +13,7 @@ from os.path import abspath, dirname, join
 
 is_closing = False
 
+
 class IndexPageHandler(tornado.web.RequestHandler):
 
     def set_default_headers(self):
@@ -26,21 +27,23 @@ class IndexPageHandler(tornado.web.RequestHandler):
             print("Got JSON data: ", self.request.body)
             data = json.loads(self.request.body)
             if data['round'] == '0':
-            	log_chat(data['session'], data['id'], data['text'])
+                log_chat(data['session'], data['id'], data['text'])
             else:
-            	log_round_proposals(data['session'], data['round'], data['proposals'])
+                log_round_proposals(data['session'], data['round'], data['proposals'])
 
     def get(self):
         print("get")
 
     def options(self):
         print("options")     
- 
+
+
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = [(r'/', IndexPageHandler)]
         settings = {'template_path': 'templates'}
         tornado.web.Application.__init__(self, handlers, **settings)
+
 
 def log_chat(session, id, text):
     file_name = join(dirname(abspath(__file__)), 'Chat_Logs_' + session +'.txt')
@@ -52,7 +55,8 @@ def log_chat(session, id, text):
         with open(file_name, 'a') as ro:
             string = id + '\t' + text + '\n'
             ro.write(string)
-		
+
+
 def log_round_proposals(session, round, proposals):
     file_name = join(dirname(abspath(__file__)), 'Round_Proposals_' + session +'.txt')
     if not os.path.isfile(file_name):
@@ -64,14 +68,17 @@ def log_round_proposals(session, round, proposals):
             string = 'Round' + round + ' Proposals:\t' + str(proposals) + '\n'
             ro.write(string)
 
+
 def signal_handler(signum, frame):
     global is_closing
     is_closing = True
+
 
 def try_exit(): 
     global is_closing
     if is_closing:
         tornado.ioloop.IOLoop.instance().stop()
+
 
 def test_log():
     log_round_proposals('ABC', '1', ['1', '2'])
@@ -83,7 +90,9 @@ def test_log():
     log_chat('DEF', 'P1', 'Hi')
     log_chat('DEF', 'B1', 'Hi there')
 
+
 # test_log()	
+
 
 if __name__ == '__main__':
     tornado.options.parse_command_line()

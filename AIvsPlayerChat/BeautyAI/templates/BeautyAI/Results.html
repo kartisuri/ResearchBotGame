@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Here were the amount requested by the player and bot:<br/>
+        Your requested amount was <b>{{ player1_guess }}</b>.<br/>
+        Bot requested amount was <b>{{ player2_guess }}</b>.
+    </p>
+
+    <p>
+        {% if player.is_bonus == 1 %}
+            You have requested exactly <b>$1</b> less than the other player.<br/>
+            Therefore you receive a bonus of <b>$20</b>.<br/>
+        {% elif player.is_bonus == 2 %}
+            You have requested $20 and the other player have requested $11.<br/>
+            Therefore you receive a bonus of <b>$20</b>.<br/>
+        {% endif %}
+        <br/>
+        Your payoff is <b>{{ player.payoff }}</b>.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

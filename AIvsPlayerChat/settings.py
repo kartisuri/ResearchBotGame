@@ -85,9 +85,15 @@ SESSION_CONFIGS = [
     },
     {
         'name': 'beauty',
-        'display_name': "Beauty Game",
+        'display_name': "Beauty Game Player vs Player",
         'num_demo_participants': 2,
         'app_sequence': ['beauty', 'payment'],
+    },
+    {
+        'name': 'BeautyAI',
+        'display_name': "Beauty Game Bot vs Player",
+        'num_demo_participants': 1,
+        'app_sequence': ['BeautyAI', 'payment'],
     },
 ]
 

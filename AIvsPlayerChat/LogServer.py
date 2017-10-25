@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import tornado.web
 import tornado.websocket
 import tornado.httpserver
@@ -94,6 +95,7 @@ def test():
     log_round_proposals('DEF', '2', ['c', 'd'])
     log_chat('DEF', 'P1', 'Hi')
     log_chat('DEF', 'B1', 'Hi there')
+
 
 # test()	
 

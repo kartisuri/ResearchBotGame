@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        You are matched to play a game against the <b>bot</b>.<br/>
+        In the game, both bot and you requests an amount of money (an integer) between <b>$11 and $20</b>.<br/>
+        You will receive the amount you have requested.<br/>
+        You will receive an <b>additional $20</b> if:<br/>
+        (i) you ask for exactly <b>$1 less</b> than the bot, or<br/>
+        (ii) you ask for <b>$20</b> and the bot asks for <b>$11</b>.<br/>
+    </p>
+    <p>
+        <b>Please wait for the players to arrive.</b>
+    </p>
+
+{% endblock %}
