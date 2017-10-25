@@ -8,6 +8,7 @@ import json
 import os
 import signal
 import tornado.options
+import time
 
 from os.path import abspath, dirname, join
 
@@ -34,7 +35,8 @@ class IndexPageHandler(tornado.web.RequestHandler):
             if data['round'] == '0':
                 log_chat(data['session'], data['id'], data['text'])
             else:
-                log_round_proposals(data['session'], data['round'], data['proposals'], data['chosen'])
+                log_round_proposals(data['session'], data['round'], data['proposals'],
+                                    data['chosen'], data['players'])
 
     def get(self):
         pass
@@ -50,32 +52,54 @@ class Application(tornado.web.Application):
         tornado.web.Application.__init__(self, handlers, **settings)
 
 
-def log_chat(session, id_value, text):
+def log_chat_txt(session, id_value, text, time_stamp):
     player_id = id_value.split('_')[1]
     file_name = join(dirname(abspath(__file__)), 'Chat_Logs_' + session + 'Player_' + player_id + '.txt')
     if not os.path.isfile(file_name):
         with open(file_name, 'w') as ro:
-            string = id_value + '\t' + text + '\n'
+            string = id_value + '\t' + text + '\t' + time_stamp + '\n'
             ro.write(string)
     else:
         with open(file_name, 'a') as ro:
-            string = id_value + '\t' + text + '\n'
+            string = id_value + '\t' + text + '\t' + time_stamp + '\n'
             ro.write(string)
 
 
-def log_round_proposals(session, round_num, proposals, proposal_chosen=None):
+def log_chat(session, id_value, text):
+    who, label = id_value.split('_')
+    readable_date_time = time.ctime()
+    log_chat_txt(session, id_value, text, readable_date_time)
+    file_name = join(dirname(abspath(__file__)), 'Chat_Logs_' + session + '.csv')
+    if not os.path.isfile(file_name):
+        with open(file_name, 'wb') as ro:
+            header = 'ID,PlayerMessage,PlayerMessageTime,BotMessage,BotMessageTime\n'.encode('utf-8')
+            ro.write(header)
+            string = (label + ',' + text + ',' + readable_date_time).encode('utf-8')
+            ro.write(string)
+    else:
+        with open(file_name, 'ab') as ro:
+            if who == 'Player':
+                string = (label + ',' + text + ',' + readable_date_time).encode('utf-8')
+            else:
+                string = (',' + text + ',' + readable_date_time + '\n').encode('utf-8')
+            ro.write(string)
+
+
+def log_round_proposals(session, round_num, proposals, proposal_chosen, players):
     file_name = join(dirname(abspath(__file__)), 'Round_Proposals_' + session + '.txt')
     if not os.path.isfile(file_name):
         with open(file_name, 'w') as ro:
-            string = "Round: %s\tProposals: %s\tProposal Selected: %s\n" % (str(round_num),
-                                                                            str(proposals),
-                                                                            str(proposal_chosen))
+            string = "Round: %s\tProposals: %s\tProposal Selected: %s\tPlayers: %s\n" % (str(round_num),
+                                                                                         str(proposals),
+                                                                                         str(proposal_chosen),
+                                                                                         str(players))
             ro.write(string)
     else:
         with open(file_name, 'a') as ro:
-            string = "Round: %s\tProposals: %s\tProposal Selected: %s\n" % (str(round_num),
-                                                                            str(proposals),
-                                                                            str(proposal_chosen))
+            string = "Round: %s\tProposals: %s\tProposal Selected: %s\tPlayers: %s\n" % (str(round_num),
+                                                                                         str(proposals),
+                                                                                         str(proposal_chosen),
+                                                                                         str(players))
             ro.write(string)
 
 

@@ -12,18 +12,14 @@ class Send(Page):
 
     def vars_for_template(self):
         choice = self.session.vars['shuffled_choices_list'][self.round_number - 1]
-        option = [self.session.vars['proposals'][choice][choice * 10 + 1],
-                  self.session.vars['proposals'][choice][choice * 10 + 2]]
-        self.participant.vars['option_str'] = ['Proposal 1: I receive $' + option[0][0] +
-                                               '; the Responder receives $' + option[0][1],
-                                               'Proposal 2: I receive $' + option[1][0] +
-                                               '; the Responder receives $' + option[1][1]]
+        self.participant.vars['option'] = [self.session.vars['proposals'][choice][choice * 10 + 1],
+                                           self.session.vars['proposals'][choice][choice * 10 + 2]]
+        self.participant.vars['option_str'] = ['Proposal 1: I receive $' + self.participant.vars['option'][0][0] +
+                                               '; the Responder receives $' + self.participant.vars['option'][0][1],
+                                               'Proposal 2: I receive $' + self.participant.vars['option'][1][0] +
+                                               '; the Responder receives $' + self.participant.vars['option'][1][1]]
         if self.round_number == self.session.vars['paying_round']:
             self.participant.vars['PR_proposer_options'] = self.participant.vars['option_str']
-        requests.post('http://10.25.182.148:5000/',
-                      json={'round': str(self.round_number),
-                            'proposals': [option[0][1], option[1][1]],
-                            'session': self.session.code})
         return {
             'proposer_option1': self.participant.vars['option_str'][0],
             'proposer_option2': self.participant.vars['option_str'][1],
@@ -51,6 +47,13 @@ class SendBack(Page):
 
     def vars_for_template(self):
         p1 = self.group.get_player_by_id(1)
+        requests.post('http://10.25.182.148:5000/',
+                      json={'round': str(self.round_number),
+                            'proposals': [p1.participant.vars['option'][0][1],
+                                          p1.participant.vars['option'][1][1]],
+                            'session': self.session.code,
+                            'chosen': self.group.sent_amount
+                            })
         if self.group.sent_amount == 'Proposal 1':
             p1.participant.vars['proposer_selection'] = p1.participant.vars['option_str'][0]
         else:

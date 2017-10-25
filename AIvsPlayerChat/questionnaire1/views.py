@@ -1,5 +1,6 @@
 from . import models
 from ._builtin import Page
+import socket
 
 
 class Questionnaire(Page):
@@ -24,8 +25,11 @@ class Chat(Page):
         player_label = self.participant.code
         if self.participant.label:
             player_label = self.participant.label
-        return {'player': player_label,
-                'session': self.session.code}
+        return {
+            'player': player_label,
+            'session': self.session.code,
+            'ip': socket.gethostbyname(socket.gethostname())
+                }
 
     def is_displayed(self):
         return self.round_number == 1

@@ -12,6 +12,7 @@
         </p>
         <input type="hidden" id="player" name="player" value={{ player }}>
         <input type="hidden" id="session" name="session" value={{ session }}>
+        <input type="hidden" id="ip" name="ip" value={{ ip }}>
         <hr class="my-2">
         <div class="row">
           <div class="col-xs-6 offset-xs-3">
@@ -81,31 +82,37 @@
         }
 
         function send(id, data){
+            var ip = document.getElementById("ip").value;
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://10.25.182.148:5000/', true);
+            xhr.open('POST', 'http://' + ip +':5000/', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.send(JSON.stringify({
                 "round": "0",
                 "session": document.getElementById("session").value,
                 "id": id,
-                "text": data
+                "text": data.replace(/,/g , "")
             }));
         }
 
         function say() {
             var text = $input.val();
             var id = document.getElementById("player").value;
+            var ip = document.getElementById("ip").value;
             send("Player_"+id, text);
             createRow(text);
             $input.val('');
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://10.25.182.148:4000/', true);
+            xhr.open('POST', 'http://' + ip + ':4000/', true);
             xhr.setRequestHeader('Content-Type', 'text/plain');
             xhr.send(text);
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
-                    createRow(xhr.responseText);
-                    send("Bot"+id, xhr.responseText);
+                    reply = xhr.responseText;
+                    if (reply === null || reply === "") {
+                        reply = 'Enter valid text!'
+                    }
+                    createRow(reply);
+                    send("Bot_"+id, reply);
                     $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
                 }
             };

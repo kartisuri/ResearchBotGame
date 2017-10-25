@@ -88,14 +88,14 @@
                 "round": "0",
                 "session": document.getElementById("session").value,
                 "id": id,
-                "text": data
+                "text": data,
             }));
         }
 
         function say() {
             var text = $input.val();
             var id = document.getElementById("player").value;
-            send("Player"+id, text);
+            send("Player_"+id, text);
             createRow(text);
             $input.val('');
             var xhr = new XMLHttpRequest();
@@ -105,7 +105,7 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     createRow(xhr.responseText);
-                    send("Bot"+id, xhr.responseText);
+                    send("Bot_"+id, xhr.responseText);
                     $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
                 }
             };
