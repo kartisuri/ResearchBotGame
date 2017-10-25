@@ -97,7 +97,13 @@
         function say() {
             var text = $input.val();
             if (text.search(/\bname\b|\bmyself\b|\bam\b/i) !== -1){
-                cleverbot();
+//                cleverbot();
+                send("Player_"+id, text);
+                createRow(text);
+                rep = "Due to anonymity, we don't talk about names any more";
+                createRow(rep);
+                    send("Bot_"+id, rep);
+                    $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
                 return
             }
             var id = document.getElementById("player").value;
