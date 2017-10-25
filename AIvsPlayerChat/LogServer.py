@@ -60,14 +60,14 @@ def log_chat(session, id_value, text):
         with open(file_name, 'wb') as ro:
             header = 'ID,PlayerMessage,PlayerMessageTime,BotMessage,BotMessageTime\n'.encode('utf-8')
             ro.write(header)
-            string = (label + ',' + text + ',' + readable_date_time).encode('utf-8')
+            string = (label + ',"' + text + '",' + readable_date_time).encode('utf-8')
             ro.write(string)
     else:
         with open(file_name, 'ab') as ro:
             if who == 'Player':
-                string = (label + ',' + text + ',' + readable_date_time).encode('utf-8')
+                string = (label + ',"' + text + '",' + readable_date_time).encode('utf-8')
             else:
-                string = (',' + text + ',' + readable_date_time + '\n').encode('utf-8')
+                string = (',"' + text + '",' + readable_date_time + '\n').encode('utf-8')
             ro.write(string)
 
 
