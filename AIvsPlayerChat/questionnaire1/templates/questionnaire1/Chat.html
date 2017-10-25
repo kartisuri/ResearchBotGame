@@ -96,7 +96,7 @@
 
         function say() {
             var text = $input.val();
-            if (text.search(/\bname\b|\bmyself\b|\bam\b/i) !== -1){
+            if (text.search(/\bname\b/i) !== -1){
 //                cleverbot();
                 send("Player_"+id, text);
                 createRow(text);
