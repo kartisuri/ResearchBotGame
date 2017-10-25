@@ -28,8 +28,9 @@ class Chat(Page):
         return {
             'player': player_label,
             'session': self.session.code,
-            'ip': socket.gethostbyname(socket.gethostname())
-                }
+            'ip': [(s.connect(('8.8.8.8', 53)),
+                   s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]
+            }
 
     def is_displayed(self):
         return self.round_number == 1

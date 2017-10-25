@@ -35,8 +35,7 @@ class IndexPageHandler(tornado.web.RequestHandler):
             if data['round'] == '0':
                 log_chat(data['session'], data['id'], data['text'])
             else:
-                log_round_proposals(data['session'], data['round'], data['proposals'],
-                                    data['chosen'], data['players'])
+                log_round_proposals(data)
 
     def get(self):
         pass
@@ -52,23 +51,10 @@ class Application(tornado.web.Application):
         tornado.web.Application.__init__(self, handlers, **settings)
 
 
-def log_chat_txt(session, id_value, text, time_stamp):
-    player_id = id_value.split('_')[1]
-    file_name = join(dirname(abspath(__file__)), 'Chat_Logs_' + session + 'Player_' + player_id + '.txt')
-    if not os.path.isfile(file_name):
-        with open(file_name, 'w') as ro:
-            string = id_value + '\t' + text + '\t' + time_stamp + '\n'
-            ro.write(string)
-    else:
-        with open(file_name, 'a') as ro:
-            string = id_value + '\t' + text + '\t' + time_stamp + '\n'
-            ro.write(string)
-
-
 def log_chat(session, id_value, text):
     who, label = id_value.split('_')
     readable_date_time = time.ctime()
-    log_chat_txt(session, id_value, text, readable_date_time)
+    # log_chat_txt(session, id_value, text, readable_date_time)
     file_name = join(dirname(abspath(__file__)), 'Chat_Logs_' + session + '.csv')
     if not os.path.isfile(file_name):
         with open(file_name, 'wb') as ro:
@@ -85,21 +71,21 @@ def log_chat(session, id_value, text):
             ro.write(string)
 
 
-def log_round_proposals(session, round_num, proposals, proposal_chosen, players):
-    file_name = join(dirname(abspath(__file__)), 'Round_Proposals_' + session + '.txt')
+def log_round_proposals(data):
+    file_name = join(dirname(abspath(__file__)), 'Round_Proposals_' + data['session'] + '.csv')
     if not os.path.isfile(file_name):
-        with open(file_name, 'w') as ro:
-            string = "Round: %s\tProposals: %s\tProposal Selected: %s\tPlayers: %s\n" % (str(round_num),
-                                                                                         str(proposals),
-                                                                                         str(proposal_chosen),
-                                                                                         str(players))
+        with open(file_name, 'wb') as ro:
+            header = 'Round,Proposal_1,Proposal_2,Proposal_Selected,Decision,ID_Player1,ID_Player2\n'.encode('utf-8')
+            ro.write(header)
+            string = (data['round'] + ',' + data['proposal1'] + ',' + data['proposal2'] +
+                      ',' + data['selection'] + ',' + data['decision'] + ',' +
+                      data['player1'] + ',' + data['player2'] + '\n').encode('utf-8')
             ro.write(string)
     else:
-        with open(file_name, 'a') as ro:
-            string = "Round: %s\tProposals: %s\tProposal Selected: %s\tPlayers: %s\n" % (str(round_num),
-                                                                                         str(proposals),
-                                                                                         str(proposal_chosen),
-                                                                                         str(players))
+        with open(file_name, 'ab') as ro:
+            string = (data['round'] + ',' + data['proposal1'] + ',' + data['proposal2'] +
+                      ',' + data['selection'] + ',' + data['decision'] + ',' +
+                      data['player1'] + ',' + data['player2'] + '\n').encode('utf-8')
             ro.write(string)
 
 
@@ -113,20 +99,6 @@ def try_exit():
     global is_closing
     if is_closing:
         tornado.ioloop.IOLoop.instance().stop()
-
-
-def test():
-    log_round_proposals('ABC', '1', ['1', '2'])
-    log_round_proposals('ABC', '2', ['c', 'd'])
-    log_chat('ABC', 'P1', 'Hi')
-    log_chat('ABC', 'B1', 'Hi there')
-    log_round_proposals('DEF', '1', ['1', '2'])
-    log_round_proposals('DEF', '2', ['c', 'd'])
-    log_chat('DEF', 'P1', 'Hi')
-    log_chat('DEF', 'B1', 'Hi there')
-
-
-# test()	
 
 
 if __name__ == '__main__':

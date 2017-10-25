@@ -3,17 +3,12 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 from otree.api import Currency as c
 import re
-import requests
 import numpy
-import socket
 
 
 class Send(Page):
 
     def vars_for_template(self):
-        self.participant.vars['player_label'] = self.participant.code
-        if self.participant.label:
-            self.participant.vars['player_label'] = self.participant.label
         choice = self.session.vars['shuffled_choices_list'][self.round_number - 1]
         self.participant.vars['option'] = [self.session.vars['proposals'][choice][choice * 10 + 1],
                                            self.session.vars['proposals'][choice][choice * 10 + 2]]
@@ -52,20 +47,6 @@ class SendBack(Page):
     def vars_for_template(self):
         p1 = self.group.get_player_by_id(1)
         selection = re.search("(.*):.*\$(\d).*\$(\d)", p1.participant.vars['proposer_selection'])
-        ip = socket.gethostbyname(socket.gethostname())
-        player_label = self.participant.code
-        if self.participant.label:
-            player_label = self.participant.label
-        requests.post('http://' + ip + ':5000/',
-                      json={
-                          'round': str(self.round_number),
-                          'proposals': [p1.participant.vars['option'][0][1],
-                                        p1.participant.vars['option'][1][1]],
-                          'session': self.session.code,
-                          'chosen': selection.group(1),
-                          'players': [player_label, p1.participant.vars['player_label']]
-                          })
-
         proposer_selection = selection.group(1) + ': Player A receives $' + selection.group(2) +\
                              '; You receive $' + selection.group(3)
         if self.round_number == 1:

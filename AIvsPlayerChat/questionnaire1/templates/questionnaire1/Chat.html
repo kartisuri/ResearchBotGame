@@ -61,7 +61,7 @@
         function cleverbot(){
             var key = "CC4qciuY4mXNry59ImrYA_clkgA";
             var id = document.getElementById("player").value;
-            send("Player"+id, $input.val());
+            send("Player_"+id, $input.val());
             createRow($input.val());
             $.ajax({
                 url: "https://www.cleverbot.com/getreply",
@@ -96,6 +96,10 @@
 
         function say() {
             var text = $input.val();
+            if (text.search(/\bname\b|\bmyself\b|\bam\b/i) !== -1){
+                cleverbot();
+                return
+            }
             var id = document.getElementById("player").value;
             var ip = document.getElementById("ip").value;
             send("Player_"+id, text);
