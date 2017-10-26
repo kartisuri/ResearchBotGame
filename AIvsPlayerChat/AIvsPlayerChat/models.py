@@ -53,11 +53,11 @@ class Group(BaseGroup):
                                         choices=['Accept', 'Reject'])
 
     def set_payoffs(self):
-        ip = [(s.connect(('8.8.8.8', 53)),
-               s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]
         p1 = self.get_player_by_id(1)
         p2 = self.get_player_by_id(2)
         amount_split = re.search('(.*):.*\$(\d).*\$(\d)', p1.participant.vars['proposer_selection'])
+        ip = [(s.connect(('8.8.8.8', 53)),
+               s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]
         requests.post('http://' + ip + ':5000/',
                       json={
                           'round': str(self.round_number),
@@ -91,6 +91,7 @@ class Group(BaseGroup):
             p2.participant.vars['responded'].append(self.sent_back_amount)
             p1.participant.vars['proposer_payoff'].append(p1_pay)
             p2.participant.vars['responder_payoff'].append(p2_pay)
+
 
 class Player(BasePlayer):
     pass

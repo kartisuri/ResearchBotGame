@@ -3,6 +3,8 @@ from otree.api import (
 )
 import random
 import re
+import requests
+import socket
 
 author = 'Karthik'
 
@@ -57,6 +59,19 @@ class Group(BaseGroup):
         p1 = self.get_player_by_id(1)
         p2 = self.get_player_by_id(2)
         amount_split = re.search('(.*):.*\$(\d).*\$(\d)', p1.participant.vars['proposer_selection'])
+        ip = [(s.connect(('8.8.8.8', 53)),
+               s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]
+        requests.post('http://' + ip + ':5000/',
+                      json={
+                          'round': str(self.round_number),
+                          'proposal1': p1.participant.vars['option'][0][1],
+                          'proposal2': p1.participant.vars['option'][1][1],
+                          'session': self.session.code,
+                          'selection': amount_split.group(1),
+                          'decision': self.sent_back_amount,
+                          'player1': p1.participant.label if p1.participant.label else p1.participant.code,
+                          'player2': p2.participant.label if p2.participant.label else p2.participant.code
+                      })
         p1_pay = amount_split.group(2)
         p2_pay = amount_split.group(3)
         if self.sent_back_amount == 'Accept':

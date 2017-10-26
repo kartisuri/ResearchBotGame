@@ -2,7 +2,6 @@ from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
 from otree.api import Currency as c
-import requests
 import re
 
 
@@ -47,13 +46,6 @@ class SendBack(Page):
 
     def vars_for_template(self):
         p1 = self.group.get_player_by_id(1)
-        requests.post('http://10.25.182.148:5000/',
-                      json={'round': str(self.round_number),
-                            'proposals': [p1.participant.vars['option'][0][1],
-                                          p1.participant.vars['option'][1][1]],
-                            'session': self.session.code,
-                            'chosen': self.group.sent_amount
-                            })
         if self.group.sent_amount == 'Proposal 1':
             p1.participant.vars['proposer_selection'] = p1.participant.vars['option_str'][0]
         else:

@@ -8,6 +8,7 @@ import json
 import os
 import signal
 import tornado.options
+import time
 
 from os.path import abspath, dirname, join
 
@@ -15,27 +16,28 @@ is_closing = False
 
 
 class IndexPageHandler(tornado.web.RequestHandler):
+    def data_received(self, chunk):
+        pass
 
     def set_default_headers(self):
         self.set_header("Access-Control-Allow-Origin", "*")
-        self.set_header("Access-Control-Allow-Headers", "Content-Type")
-        self.set_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
-    
+        self.set_header("Access-Control-Allow-Headers",
+                        "Access-Control-Allow-Headers,Origin,Accept, X-Requested-With, " +
+                        "Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers")
+        self.set_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, HEAD')
+        self.set_header("Access-Control-Allow-Credentials", "false")
+
     def post(self):
-        data = {'round': ''}
         if self.request.body:
             print("Got JSON data: ", self.request.body)
             data = json.loads(self.request.body)
-            if data['round'] == '0':
-                log_chat(data['session'], data['id'], data['text'])
-            else:
-                log_round_proposals(data['session'], data['round'], data['proposals'])
+            log_round_proposals(data)
 
     def get(self):
-        print("get")
+        pass
 
-    def options(self):
-        print("options")     
+    def options(self, *args, **kwargs):
+        pass
 
 
 class Application(tornado.web.Application):
@@ -45,53 +47,34 @@ class Application(tornado.web.Application):
         tornado.web.Application.__init__(self, handlers, **settings)
 
 
-def log_chat(session, id, text):
-    file_name = join(dirname(abspath(__file__)), 'Chat_Logs_' + session +'.txt')
+def log_round_proposals(data):
+    file_name = join(dirname(abspath(__file__)), 'Round_Proposals_' + data['session'] + '.csv')
     if not os.path.isfile(file_name):
-        with open(file_name, 'w') as ro:
-            string = id + '\t' + text + '\n'
+        with open(file_name, 'wb') as ro:
+            header = 'Round,Proposal_1,Proposal_2,Proposal_Selected,Decision,ID_Player1,ID_Player2\n'.encode('utf-8')
+            ro.write(header)
+            string = (data['round'] + ',' + data['proposal1'] + ',' + data['proposal2'] +
+                      ',' + data['selection'] + ',' + data['decision'] + ',' +
+                      data['player1'] + ',' + data['player2'] + '\n').encode('utf-8')
             ro.write(string)
     else:
-        with open(file_name, 'a') as ro:
-            string = id + '\t' + text + '\n'
-            ro.write(string)
-
-
-def log_round_proposals(session, round, proposals):
-    file_name = join(dirname(abspath(__file__)), 'Round_Proposals_' + session +'.txt')
-    if not os.path.isfile(file_name):
-        with open(file_name, 'w') as ro:
-            string = 'Round' + round + ' Proposals:\t' + str(proposals) + '\n'
-            ro.write(string)
-    else:
-        with open(file_name, 'a') as ro:
-            string = 'Round' + round + ' Proposals:\t' + str(proposals) + '\n'
+        with open(file_name, 'ab') as ro:
+            string = (data['round'] + ',' + data['proposal1'] + ',' + data['proposal2'] +
+                      ',' + data['selection'] + ',' + data['decision'] + ',' +
+                      data['player1'] + ',' + data['player2'] + '\n').encode('utf-8')
             ro.write(string)
 
 
 def signal_handler(signum, frame):
+    print(signum, frame)
     global is_closing
     is_closing = True
 
 
-def try_exit(): 
+def try_exit():
     global is_closing
     if is_closing:
         tornado.ioloop.IOLoop.instance().stop()
-
-
-def test_log():
-    log_round_proposals('ABC', '1', ['1', '2'])
-    log_round_proposals('ABC', '2', ['c', 'd'])
-    log_chat('ABC', 'P1', 'Hi')
-    log_chat('ABC', 'B1', 'Hi there')
-    log_round_proposals('DEF', '1', ['1', '2'])
-    log_round_proposals('DEF', '2', ['c', 'd'])
-    log_chat('DEF', 'P1', 'Hi')
-    log_chat('DEF', 'B1', 'Hi there')
-
-
-# test_log()	
 
 
 if __name__ == '__main__':
@@ -101,6 +84,6 @@ if __name__ == '__main__':
     ws_app = Application()
     server = tornado.httpserver.HTTPServer(ws_app)
     server.listen(port)
-    tornado.ioloop.PeriodicCallback(try_exit, 100).start() 
+    tornado.ioloop.PeriodicCallback(try_exit, 100).start()
     print("Game Log Server started on " + str(port))
     tornado.ioloop.IOLoop.instance().start()
