@@ -27,6 +27,14 @@ DATABASES = {
     )
 }
 
+ROOMS = [
+    {
+        'name': 'ntu_hss_lab_six',
+        'display_name': 'HSS Lab 6',
+        'participant_label_file': 'participant_label.txt',
+    },
+]
+
 # don't share this with anybody.
 SECRET_KEY = 'r$y$#=fkhiebyt6wk1%bf9$w7anylwt$l1%xb6^5j%u*&hv8#('
 
